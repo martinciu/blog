@@ -1,0 +1,114 @@
+---
+layout: post
+title: Mounting Grape API inside rails application
+excerpt: Grape is a REST-like API micro-framework for Ruby. It is built to complement existing web application frameworks such as Rails and Sinatra by providing a simple DSL to easily provide APIs.
+---
+"Grape":grape is a REST-like API micro-framework for Ruby. It is built to complement existing web application frameworks such as "Rails":rails and "Sinatra":sinatra by providing a simple DSL to easily provide APIs. It has built-in support for common conventions such as multiple formats, subdomain/prefix restriction, and versioning.  Because "grape":grape APIs are "Rack":rack applications, it is very easy (in rails 3) and quite easy (in rails 2.3) to mount it in your existing rails application.
+
+h3. API
+
+Let’s start with a simple API. Assuming you have a simple blog application with Post resource and you want to list all posts and show a specific post by ID using API.
+
+{% highlight ruby %}
+#lib/api.rb
+module MyApp
+  class API < Grape::API
+    prefix "api"
+ 
+    resource "posts" do
+      get do
+        Post.all
+      end
+ 
+      get ':id' do
+        Post.find(params[:id])
+      end
+    end
+ 
+  end
+end
+{% endhighlight %}
+
+h3. Rails 3
+
+Because of Rails3 modularity it is very easy to mount any "Rack":rack application inside existing application. You only need to add following line to your @config/routes.rb@ file
+
+{% highlight ruby %}
+#config/routes.rb
+mount MyApp::API => "/" #API will be available under "/api" url because of setting from MyApp::API line 4
+{% endhighlight %}
+
+After restartig your application, @GET /api/posts@ should returns all posts, and @GET /api/posts/2@ should returns post with id=2. Simple as that.
+
+h3. Rails 2.3
+
+If you want to use grape with rails 2.3, things are a little more complicated. We can use the same @lib/api.rb@ file, but we can not mount our API in @config/routes.rb@. Fortunately, rails 2.3 is actually a rack application, so we can use "Rack::Cascade":rack-cascade to run api request without touching rails app. But, first things first.
+
+When you are starting rails application by @ruby script/server@, an new "Rack::Builder":rack-builder is being initialized with some middleware and new rails dispatcher:
+
+{% highlight ruby linenos linenostart=83 %}
+
+  # rails/lib/commands/server.rb
+  require RAILS_ROOT + "/config/environment"
+  inner_app = ActionController::Dispatcher.new
+end
+ 
+if options[:path].nil?
+  map_path = "/"
+else
+  ActionController::Base.relative_url_root = options[:path]
+  map_path = options[:path]
+end
+ 
+app = Rack::Builder.new {
+  use Rails::Rack::LogTailer unless options[:detach]
+  use Rails::Rack::Debugger if options[:debugger]
+  map map_path do
+    use Rails::Rack::Static 
+    run inner_app
+  end
+}.to_app
+{% endhighlight %}
+
+Then, a server runs app. Any server knows how to run it because @app@ is a valid Rack application. So, why can we run rack app our own? Sure we can! The best way to run is to define it in @config.ru@ file. Rails 2.3 is not shipped with it, so you have to create it by your self. Unless you changed default options your @config.ru@ file should looks like this:
+
+{% highlight ruby %}
+require "config/environment"
+ 
+use Rails::Rack::LogTailer
+use Rails::Rack::Static
+run ActionController::Dispatcher.new
+{% endhighlight %}
+
+Now, you can start your appliction by:
+
+{% highlight bash %}
+$ [bundle exec] rackup
+{% endhighlight %}
+
+Your application should run like before, except logs my looks a little bit different. Now we will add our API to the application. To do that, we will use "Rack::Cascade":rack-cascade. "Rack::Cascade":rack-cascade tries an request on several apps, and returns the first response that is not 404 (or in a list of configurable status codes). We want our API to be as fast and lightweight as possible. That’s why we will add before trying rails application, to avoid all it’s magic when it is not necessary.
+
+{% highlight ruby %}
+require "config/environment"
+ 
+rails_app = Rack::Builder.new do
+  use Rails::Rack::LogTailer
+  use Rails::Rack::Static
+  run ActionController::Dispatcher.new
+end
+ 
+run Rack::Cascade.new([
+  MyApp::API,
+  rails_app.new
+])
+{% endhighlight %}
+
+Now, routes @GET /api/posts@ should disply all posts, and @GET /api/posts/2@ should work as expected.
+
+[grape]https://github.com/intridea/grape
+[rails]http://rubyonrails.org/
+[sinatra]http://www.sinatrarb.com/
+[rack]http://rack.rubyforge.org/
+[rack-cascade]https://github.com/rack/rack/blob/master/lib/rack/cascade.rb
+[rack-builder]http://rack.rubyforge.org/doc/classes/Rack/Builder.html
+

@@ -1,37 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
-    <title>github :: martinciu (Marcin Ciunelis)</title>
-    <style type="text/css" media="screen">
-      * { margin: 0; padding: 0; }
-      body { font-family: "acuta-1","acuta-2",serif; background-color: #fff; overflow: auto; color: #ccc; font-size: 16px; }
-      h1 { font-weight: normal; margin-bottom: -10px; color: #222; font-size: 50px; }
-      h4 { font-weight: normal; margin-bottom: 30px; color: #aaa; }
-      a { text-decoration: none; color: #777; }
-        a:hover { color: #444; }
-      #container { width: 100%; text-align: center; margin: 150px 0; }
-    </style>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
-    <script type="text/javascript" src="http://use.typekit.com/xak8heo.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-152335-15']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-  </head>
-  <body>
-    {{ content }}
-  </body>
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
+  <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.title }}</title>
+  <link href="{{ site.url }}/atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
+  <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/stylesheets/site.css" type="text/css" media="screen, projection" />
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-152335-13']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <hr class="space" />
+    <div class="span-10"><h1><a href="/">{{ site.title }}</a></h1></div>
+    <div class="span-14 last"><h4>{{ site.description }}</h4s></div>
+    <hr class="space" />
+    <div class="span-14 prepend-2 append-2">  
+      {{ content }}
+    </div>
+    <div id="sidebar" class="span-6 last">
+      Sidebar
+    </div>
+    <hr class="space" />
+    <div id="footer" class="span-24">
+      by {{ site.author }}
+    </div>
+  </div>
+</body>
 </html>
-

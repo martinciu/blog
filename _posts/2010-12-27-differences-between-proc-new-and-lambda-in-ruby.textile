@@ -1,0 +1,66 @@
+---
+layout: post
+title: Differences between Proc.new and lambda in ruby
+excerpt: Proc.new and lambda does almost the same job. They provide a dynamically created inline method. But they are slightly different.
+---
+It will be another not very innovative post about a something that probably most Ruby developers already know. Unfortunately I didn’t know about this  before, and I think it will be a quite good form of this blog, that I will be posting things that I’ve recently learned. So here is what I’ve learned today.
+
+@Proc.new@ and @lambda@ does almost the same job. They provide a dynamically created inline method. But they are slightly different. What are the differences? There are two (as far as I know at the moment)
+
+h3. 1. Acceptance of parameters
+
+@Proc.new@ doesn’t care how many parameter do you provide, when @lambda@ needs exact number of parameters. Example:
+
+{% highlight ruby %}
+pr = Proc.new {|a,b,c| puts a,b,c}
+pr.call(1, 2, 3, 4)
+# 1
+# 2
+# 3
+{% endhighlight %}
+
+{% highlight ruby %}
+pr = lambda {|a,b,c| puts a,b,c}
+pr.call(1, 2, 3, 4)
+# ArgumentError: wrong number of arguments (4 for 3)
+{% endhighlight %}
+
+h3. 2. Returning from a proc
+@return@ called in @Proc.new@ block returns from enclosing method when return called in @lambda@ block returns from just a block.
+Examples:
+
+{% highlight ruby %}
+def my_method
+  puts "Starting my_method"
+  pr = Proc.new {return}
+  pr.call
+  puts "Finishing my_method"
+end
+ 
+puts "Before my_method"
+my_method
+puts "After my_method"
+# Before my_method
+# Starting my_method
+# After my_method
+{% endhighlight %}
+
+{% highlight ruby %}
+def my_method
+  puts "Starting my_method"
+  pr = lambda {return}
+  pr.call
+  puts "Finishing my_method"
+end
+ 
+puts "Before my_method"
+my_method
+puts "After my_method"
+# Before my_method
+# Starting my_method
+# Finishing my_method
+# After my_method
+{% endhighlight %}
+
+The other thing that is worth mentioning is that there exist an instruction called @proc@. What is wired, it works different in ruby 1.8 and in version 1.9. In Ruby 1.8 proc behaviors like @lambda@ when in Ruby 1.9 it works like @Proc.ne@w. Because of this, and because of ruumors that proc instruction will be removed in ruby 2.0, I don’t recommend using it in your code.
+

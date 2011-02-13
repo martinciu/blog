@@ -1,0 +1,70 @@
+---
+layout: post
+title: Ruby Timeout::Error is not a StandardError
+excerpt: Quite strange but it is true (for ruby 1.8)
+---
+Let's assume that you have piece of code that does a very important job but some times this job can not be accomplished because of various reasons. One of them could be a timeout . It should also inform you nicely about that:
+
+{% highlight ruby linenos %}
+require "timeout"
+ 
+begin
+  timeout(0.1) do
+    sleep
+  end
+rescue
+  p "I'm sorry, Sir. We couldn't make it, Sir."
+end
+{% endhighlight %}
+
+This code seems to be alright. If script sleeps to long Timeout::Error exception should be thrown and I should be informed about it. Alright, lets run it:
+
+{% highlight bash %}
+$ ruby test.rb
+/Users/martinciu/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/timeout.rb:60: execution expired (Timeout::Error)
+	from test.rb:4
+{% endhighlight %}
+
+WTF? That was exactly what I thought when I first saw this issue. The answer is simple and actually is in documentation: “If you write a rescue clause with no parameter list, the parameter defaults to StandardError.”
+
+Wait a minute! Timeout::Error does not extend StandardError? Well, actually it doesn’t:
+
+{% highlight bash %}
+$ irb
+>> Timeout::Error.ancestors
+=> [Timeout::Error, Interrupt, SignalException, Exception, Object, Kernel]
+>>
+{% endhighlight %}
+
+Strange, isn’t it? It has to be strange to so many people that it has been changed in ruby 1.9:
+
+{% highlight bash %}
+$ rvm 1.9.2 irb                                                                                                                         ~/www/timeout
+>> require 'timeout'
+=> true
+>> Timeout::Error.ancestors
+=> [Timeout::Error, RuntimeError, StandardError, Exception, Object, Kernel, BasicObject]
+>>
+{% endhighlight %}
+
+So, the title of this post should read: Timeout::Error is not an StandardError in ruby 1.8.
+
+OK, what are the solutions for this case:
+
+# you can replace line 7 by “rescue StandardError,Timeout::Error” – only standard erors and timrouts will he rescued then
+# you can replace line 7 by “rescue Exception” – all exceptions will be caught than by rescue block
+# you can add another rescue block only for Timeout::Error
+
+It seems to me that solution no.1 is the best, but it could vary on your application.
+
+Are there any other Exceptions that doesn’t extend StandardError and are not rescued by defult? Yes there are some. Here is the list of a few Exceptions that you could be familiar with:
+
+{% highlight ruby %}
+StopIteration, SystemStackError, LocalJumpError, EOFError, IOError, RegexpError,
+FloatDomainError, ZeroDivisionError, ThreadError, SystemCallError, NoMemoryError,
+SecurityError, RuntimeError, NotImplementedError, LoadError, SyntaxError,
+ScriptError, NoMethodError, NameError, RangeError, IndexError, ArgumentError, 
+TypeError, StandardError, Interrupt, SignalException, fatal, SystemExit
+{% endhighlight %}
+
+For most of them it is best to not catch them by rescue directive. But probably there could some cases that rescuing any of these Exceptions is require. Please remember that these are only examples and there are many other exceptions that are not rescued by default.
