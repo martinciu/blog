@@ -1,8 +1,16 @@
 ---
 layout: default
 ---
-<ul class="posts-list">All posts
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+<div class="posts-list">
+  {% for post in site.posts limit:5 %}
+    <div class="post">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h6>{{ post.date | date_to_string }}</h6>
+      {{ post.content }}
+    </div>
   {% endfor %}
-</ul>
+</div>
+
+<p id="footnote">
+  Didn't find what you were looking for? There's more in the <a href="/archive.html">archive</a>.
+</p>
