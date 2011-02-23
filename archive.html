@@ -2,11 +2,12 @@
 layout: default
 title: Archive
 ---
-<ul class="posts-list">All posts
+<div class="posts-list">
   {% for post in site.posts %}
-    <li>
-      <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.excerpt }}</p>
-    </li>
+    <div class="post-excerpt">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <h6>Posted on {{ post.date | date: "%A, %B %d, %Y" }}</h6>
+      {{ post.excerpt }}
+    </div>
   {% endfor %}
-</ul>
+</div>

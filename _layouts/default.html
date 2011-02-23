@@ -6,12 +6,12 @@
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
   <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.title }}</title>
   <link href="{{ site.url }}/atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
-  <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
-  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
   <!--[if lt IE 8]>
-    <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
-  <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" media="screen, projection" />
+  <link href="/stylesheets/syntax.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/stylesheets/site.css" type="text/css" media="screen, projection" />
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -24,21 +24,29 @@
     })();
   </script>
 </head>
-<body>
-  <div class="container">
-    <hr class="space" />
-    <div class="span-10"><h1><a href="/">{{ site.title }}</a></h1></div>
-    <div class="span-14 last"><h4>{{ site.description }}</h4s></div>
-    <hr class="space" />
-    <div class="span-14 prepend-2 append-2">  
+<body class="bp two-col">
+  <div id="container">
+    <div id="header">
+      <div id="logo">
+        <h1><a href="/">{{ site.title }}</a></h1>
+        <h4>{{ site.description }}</h4>
+      </div>
+      <div id="menu">
+        <ul>
+          <li><a href="http://github.com/martinciu" target="blank">my github</a></li>
+          <li><a href="http://twitter.com/martinciu" target="blank">my twitter</a></li>
+          <li><a href="{{ site.url }}/archive.html">my posts</a></li>
+          <li><a href="{{ site.url }}/atom.xml">my rss</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content">  
       {{ content }}
     </div>
-    <div id="sidebar" class="span-6 last">
-      <a href="/archive.html">Archive</a>
+    <div id="sidebar">
     </div>
-    <hr class="space" />
-    <div id="footer" class="span-24">
-      by {{ site.author }}
+    <div id="footer">
+      powered by <a href="http://jekyllrb.com/" traget="blank">jekyll</a>, <a href="http://beta.compass-style.org" traget="blank">compass</a>, <a href="http://www.blueprintcss.org/" traget="blank">blueprint</a><br>Hosted by <a href="https://github.com" traget="blank">GitHub</a>
     </div>
   </div>
 </body>

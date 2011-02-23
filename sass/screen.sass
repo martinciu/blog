@@ -1,0 +1,95 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+// Import the non-default scaffolding module.
+@import blueprint/scaffolding
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+// If you are doing a lot of stylesheet concatenation, it is suggested
+// that you scope your blueprint styles, so that you can better control
+// what pages use blueprint when stylesheets are concatenated together.
+body.bp
+  +blueprint-typography(true)
+  +blueprint-utilities
+  +blueprint-debug
+  +blueprint-interaction
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+form.bp
+  +blueprint-form
+  // You'll probably want to remove the scaffolding once you start styling your site.
+  +blueprint-scaffolding
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body.two-col
+  #container
+    +container
+    a, a:visited
+      :color $dark-grey
+    a:hover
+      :color #333
+  #header
+    +column(24)
+    :margin-top 20px
+    a, a:visited
+      :color $dark-grey
+    a
+      :text-decoration none
+    #logo
+      +column(10)
+      h1
+        :margin-bottom 0px
+      h4
+        :font-style italic
+        :color $light-gray
+      a:hover
+        :color red
+    #menu
+      +column(14, true)
+      :font-size 150%
+      a:hover
+        :text-decoration underline
+      ul
+        :list-style-type none
+        :float right
+        li
+          :display inline
+          :padding-left 40px
+  #sidebar
+    +column(8)
+  #content
+    +column(14, true)
+    +prepend(1)
+    +append(1)
+    .post, .post-excerpt
+      h3
+        :margin-bottom 0px
+      h6
+        :font-style italic
+        :color $light-gray
+        :margin-bottom 20px
+    .post
+      .highlight
+        :background-color #222
+        :color #FFF
+        :padding 10px
+        :-moz-border-radius 10px
+        -webkit-border-radius 10px
+    .post-excerpt
+      h6
+        :margin-bottom 0px
+      h3
+        :margin-top 20px
+  #footer
+    +column(24)
+    :color $light-gray
+    :font-style italic
+    :text-align center
+
+
