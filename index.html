@@ -1,16 +1,21 @@
 ---
 layout: default
 ---
-<div class="posts-list">
-  {% for post in site.posts limit:5 %}
-    <div class="post">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <h6>Posted on {{ post.date | date: "%A, %B %d, %Y" }}</h6>
-      {{ post.content }}
-    </div>
-  {% endfor %}
+<div id="content">  
+  <div class="posts-list">
+    {% for post in site.posts limit:5 %}
+      <div class="post">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <h6>Posted on {{ post.date | date: "%A, %B %d, %Y" }}</h6>
+        {{ post.content }}
+      </div>
+    {% endfor %}
+  </div>
+
+  <p id="footnote">
+    Didn't find what you were looking for? There's more in the <a href="/archive.html">archive</a>.
+  </p>
+</div>
+<div id="sidebar">
 </div>
 
-<p id="footnote">
-  Didn't find what you were looking for? There's more in the <a href="/archive.html">archive</a>.
-</p>
