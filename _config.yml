@@ -11,7 +11,7 @@ permalink:   /:year/:month/:title.html
 #
 # Site configuration
 #
-url:          http://localhost:4000
+url:          http://martinciu.com
 title:        martinciu's dev blog
 description:  ruby, rails, javascript, development
 keywords:     ruby, rails, javascript, development
