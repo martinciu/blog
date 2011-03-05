@@ -5,7 +5,7 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}" />
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
   <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.title }}</title>
-  <link href="{{ site.url }}/atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
+  <link href="/atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
   <!--[if lt IE 8]>
@@ -24,6 +24,7 @@
     })();
   </script>
 </head>
+
 <body class="bp two-col">
   <div id="container">
     <div id="header">
@@ -33,10 +34,10 @@
       </div>
       <div id="menu">
         <ul>
-          <li><a href="http://github.com/martinciu" target="blank">my github</a></li>
-          <li><a href="http://twitter.com/martinciu" target="blank">my twitter</a></li>
-          <li><a href="{{ site.url }}/archive.html">my posts</a></li>
-          <li><a href="{{ site.url }}/atom.xml">my rss</a></li>
+          <li><a href="http://github.com/martinciu" target="blank">github</a></li>
+          <li><a href="http://twitter.com/martinciu" target="blank">twitter</a></li>
+          <li><a href="/archive.html">archive</a></li>
+          <li><a href="/atom.xml">rss</a></li>
         </ul>
       </div>
     </div>
