@@ -483,22 +483,26 @@ form.bp form.inline p {
   margin-bottom: 0;
 }
 
-/* line 31, ../sass/screen.sass */
+/* line 30, ../sass/screen.sass */
+body.two-col {
+  font-family: AniversRegular;
+}
+/* line 32, ../sass/screen.sass */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 33, ../sass/screen.sass */
+/* line 34, ../sass/screen.sass */
 body.two-col #container a, body.two-col #container a:visited {
   color: #777777;
 }
-/* line 35, ../sass/screen.sass */
+/* line 36, ../sass/screen.sass */
 body.two-col #container a:hover {
   color: #333333;
 }
-/* line 37, ../sass/screen.sass */
+/* line 38, ../sass/screen.sass */
 body.two-col #header {
   display: inline;
   float: left;
@@ -510,15 +514,15 @@ body.two-col #header {
 * html body.two-col #header {
   overflow-x: hidden;
 }
-/* line 40, ../sass/screen.sass */
+/* line 41, ../sass/screen.sass */
 body.two-col #header a, body.two-col #header a:visited {
   color: #777777;
 }
-/* line 42, ../sass/screen.sass */
+/* line 43, ../sass/screen.sass */
 body.two-col #header a {
   text-decoration: none;
 }
-/* line 44, ../sass/screen.sass */
+/* line 45, ../sass/screen.sass */
 body.two-col #header #logo {
   display: inline;
   float: left;
@@ -529,20 +533,20 @@ body.two-col #header #logo {
 * html body.two-col #header #logo {
   overflow-x: hidden;
 }
-/* line 46, ../sass/screen.sass */
+/* line 47, ../sass/screen.sass */
 body.two-col #header #logo h1 {
   margin-bottom: 0px;
 }
-/* line 48, ../sass/screen.sass */
+/* line 49, ../sass/screen.sass */
 body.two-col #header #logo h4 {
   font-style: italic;
   color: #bbbbbb;
 }
-/* line 51, ../sass/screen.sass */
+/* line 52, ../sass/screen.sass */
 body.two-col #header #logo a:hover {
   color: red;
 }
-/* line 53, ../sass/screen.sass */
+/* line 54, ../sass/screen.sass */
 body.two-col #header #menu {
   display: inline;
   float: left;
@@ -554,21 +558,21 @@ body.two-col #header #menu {
 * html body.two-col #header #menu {
   overflow-x: hidden;
 }
-/* line 56, ../sass/screen.sass */
+/* line 57, ../sass/screen.sass */
 body.two-col #header #menu a:hover {
   text-decoration: underline;
 }
-/* line 58, ../sass/screen.sass */
+/* line 59, ../sass/screen.sass */
 body.two-col #header #menu ul {
   list-style-type: none;
   float: right;
 }
-/* line 61, ../sass/screen.sass */
+/* line 62, ../sass/screen.sass */
 body.two-col #header #menu ul li {
   display: inline;
   padding-left: 40px;
 }
-/* line 64, ../sass/screen.sass */
+/* line 65, ../sass/screen.sass */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -579,7 +583,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 66, ../sass/screen.sass */
+/* line 67, ../sass/screen.sass */
 body.two-col #content {
   display: inline;
   float: left;
@@ -592,32 +596,32 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
-/* line 71, ../sass/screen.sass */
+/* line 72, ../sass/screen.sass */
 body.two-col #content .post h3, body.two-col #content .post-excerpt h3 {
   margin-bottom: 0px;
 }
-/* line 73, ../sass/screen.sass */
+/* line 74, ../sass/screen.sass */
 body.two-col #content .post h6, body.two-col #content .post-excerpt h6 {
   font-style: italic;
   color: #bbbbbb;
   margin-bottom: 20px;
 }
-/* line 78, ../sass/screen.sass */
+/* line 79, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #222222;
   color: white;
   padding: 10px;
   -moz-border-radius: 10px;
 }
-/* line 85, ../sass/screen.sass */
+/* line 86, ../sass/screen.sass */
 body.two-col #content .post-excerpt h6 {
   margin-bottom: 0px;
 }
-/* line 87, ../sass/screen.sass */
+/* line 88, ../sass/screen.sass */
 body.two-col #content .post-excerpt h3 {
   margin-top: 20px;
 }
-/* line 89, ../sass/screen.sass */
+/* line 90, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;

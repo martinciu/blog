@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'AniversRegular';
+    src: url('webfonts/Anivers_Regular-webfont.eot');
+    src: url('webfonts/Anivers_Regular-webfont.eot?iefix') format('eot'),
+         url('webfonts/Anivers_Regular-webfont.woff') format('woff'),
+         url('webfonts/Anivers_Regular-webfont.ttf') format('truetype'),
+         url('webfonts/Anivers_Regular-webfont.svg#webfont3JLVF59W') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
