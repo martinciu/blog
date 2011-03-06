@@ -9,3 +9,65 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'ColaborateThinRegular';
+    src: url('webfont/ColabThi-webfont.eot');
+    src: url('webfont/ColabThi-webfont.eot?iefix') format('eot'),
+         url('webfont/ColabThi-webfont.woff') format('woff'),
+         url('webfont/ColabThi-webfont.ttf') format('truetype'),
+         url('webfont/ColabThi-webfont.svg#webfontG4vaW79c') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ColaborateLightRegular';
+    src: url('webfont/ColabLig-webfont.eot');
+    src: url('webfont/ColabLig-webfont.eot?iefix') format('eot'),
+         url('webfont/ColabLig-webfont.woff') format('woff'),
+         url('webfont/ColabLig-webfont.ttf') format('truetype'),
+         url('webfont/ColabLig-webfont.svg#webfont3FAZKDdg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ColaborateRegular';
+    src: url('webfont/ColabReg-webfont.eot');
+    src: url('webfont/ColabReg-webfont.eot?iefix') format('eot'),
+         url('webfont/ColabReg-webfont.woff') format('woff'),
+         url('webfont/ColabReg-webfont.ttf') format('truetype'),
+         url('webfont/ColabReg-webfont.svg#webfontTlHJ4DQk') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ColaborateMediumRegular';
+    src: url('webfont/ColabMed-webfont.eot');
+    src: url('webfont/ColabMed-webfont.eot?iefix') format('eot'),
+         url('webfont/ColabMed-webfont.woff') format('woff'),
+         url('webfont/ColabMed-webfont.ttf') format('truetype'),
+         url('webfont/ColabMed-webfont.svg#webfont8gV1zcAy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ColaborateBoldRegular';
+    src: url('webfont/ColabBol-webfont.eot');
+    src: url('webfont/ColabBol-webfont.eot?iefix') format('eot'),
+         url('webfont/ColabBol-webfont.woff') format('woff'),
+         url('webfont/ColabBol-webfont.ttf') format('truetype'),
+         url('webfont/ColabBol-webfont.svg#webfontbKFqRJsi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
