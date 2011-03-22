@@ -28,7 +28,6 @@ form.bp
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col
-  :font-family AniversRegular
   :background-color #eee
   #container
     +container
@@ -47,14 +46,16 @@ body.two-col
       +column(10)
       h1
         :margin-bottom 0px
+        :font-family CuprumFFURegular, sans-serif
       h4
-        :font-style italic
         :color $light-gray
+        :font-family GentiumBasicItalic, serif
       a:hover
         :color red
     #menu
       +column(14, true)
       :font-size 150%
+      :font-family GnuolaneRegular, sans-serif
       a:hover
         :text-decoration underline
       ul
@@ -65,6 +66,11 @@ body.two-col
           :padding-left 40px
   #sidebar
     +column(8)
+    :font-family GnuolaneRegular, sans-serif
+    li
+      :font-family GentiumBasicItalic, serif
+      a
+        :font-family CuprumFFURegular, sans-serif
   #content
     +column(14, true)
     +prepend(1)
@@ -72,11 +78,13 @@ body.two-col
     .post, .post-excerpt
       h3
         :margin-bottom 0px
+        :font-family CuprumFFURegular, sans-serif
       h6
-        :font-style italic
         :color $light-gray
         :margin-bottom 20px
+        :font-family GentiumBasicItalic, serif
     .post
+      :font-family LiberationSansRegular, sans-serif
       .highlight
         :background-color #222
         :color #FFF
@@ -91,7 +99,7 @@ body.two-col
   #footer
     +column(24)
     :color $light-gray
-    :font-style italic
+    :font-family GentiumBasicItalic, serif
     :text-align center
 
 
