@@ -99,7 +99,7 @@ end
  
 run Rack::Cascade.new([
   MyApp::API,
-  rails_app.new
+  rails_app
 ])
 {% endhighlight %}
 
