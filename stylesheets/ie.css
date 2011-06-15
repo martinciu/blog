@@ -1,109 +1,57 @@
-/* line 7, ../sass/ie.sass */
-body.bp {
-  text-align: center;
-}
-/* line 44, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-* html body.bp legend {
-  margin: 0px -8px 16px 0;
-  padding: 0;
-}
-/* line 48, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-html > body.bp p code {
-  *white-space: normal;
-}
-/* line 60, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp .container {
-  text-align: left;
-}
-/* line 62, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp sup {
-  vertical-align: text-top;
-}
-/* line 64, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp sub {
-  vertical-align: text-bottom;
-}
-/* line 66, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp hr {
-  margin: -8px auto 11px;
-}
-/* line 68, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp img {
-  -ms-interpolation-mode: bicubic;
-}
-/* line 70, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp fieldset {
-  padding-top: 0;
-}
-/* line 72, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp legend {
-  margin-top: -0.2em;
-  margin-bottom: 1em;
-  margin-left: -0.5em;
-}
-/* line 76, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp fieldset, body.bp #IE8#HACK {
-  padding-top: 1.4em;
-}
-/* line 77, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp legend, body.bp #IE8#HACK {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-/* line 78, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp textarea {
-  overflow: auto;
-}
-/* line 80, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp label {
-  position: relative;
-  top: -0.25em;
-}
-/* line 84, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.text {
-  margin: 0.5em 0;
-  background-color: white;
-  border: 1px solid #bbbbbb;
-}
-/* line 88, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.text:focus {
-  border: 1px solid #666666;
-}
-/* line 90, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.title {
-  margin: 0.5em 0;
-  background-color: white;
-  border: 1px solid #bbbbbb;
-}
-/* line 94, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.title:focus {
-  border: 1px solid #666666;
-}
-/* line 96, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.checkbox {
-  position: relative;
-  top: 0.25em;
-}
-/* line 99, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.radio {
-  position: relative;
-  top: 0.25em;
-}
-/* line 102, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp input.button {
-  position: relative;
-  top: 0.25em;
-}
-/* line 105, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp textarea {
-  margin: 0.5em 0;
-}
-/* line 107, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp select {
-  margin: 0.5em 0;
-}
-/* line 109, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.beta.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body.bp button {
-  position: relative;
-  top: 0.25em;
-}
+/*
+Syntax error: File to import not found or unreadable: blueprint.
+              Load paths:
+                .
+                sass
+        on line 1 of /Users/martinciu/www/martinciu.github.com/sass/ie.sass
+
+1: @import blueprint
+2: 
+3: // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
+4: // @include blueprint-ie
+5: 
+6: //Recommended Blueprint configuration with scoping and semantic layout:
+
+Backtrace:
+/Users/martinciu/www/martinciu.github.com/sass/ie.sass:1
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/import_node.rb:64:in `rescue in import'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/import_node.rb:42:in `import'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/import_node.rb:25:in `imported_file'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:148:in `rescue in visit_import'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:153:in `visit_import'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/tree/root_node.rb:20:in `render'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/engine.rb:291:in `_render'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/engine.rb:238:in `render'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:175:in `each'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:173:in `each'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin/compiler.rb:214:in `watch'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/plugin.rb:111:in `method_missing'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/exec.rb:408:in `watch_or_update'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/exec.rb:294:in `process_result'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/exec.rb:41:in `parse'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/lib/sass/exec.rb:21:in `parse!'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/sass-3.1.2/bin/sass:8:in `<top (required)>'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/bin/sass:19:in `load'
+/Users/martinciu/.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/bin/sass:19:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: blueprint.\A               Load paths:\A                 .\A                 sass\A         on line 1 of /Users/martinciu/www/martinciu.github.com/sass/ie.sass\A \A 1: @import blueprint\A 2: \A 3: // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:\A 4: // @include blueprint-ie\A 5: \A 6: //Recommended Blueprint configuration with scoping and semantic layout:"; }
