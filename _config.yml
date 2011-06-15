@@ -13,7 +13,7 @@ permalink:   /:year/:month/:title.html
 #
 url:          http://martinciu.com
 title:        martinciu's dev blog
-description:  ruby, rails, javascript, development
-keywords:     ruby, rails, javascript, development
+description:  ruby, rails, javascript, nodejs, coffeescript
+keywords:     ruby, rails, javascript, nodejs, coffeescript
 author:       Marcin Ciunelis
 email:        marcin.ciunelis@gmail.com
