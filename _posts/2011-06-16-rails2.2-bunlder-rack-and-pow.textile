@@ -1,0 +1,121 @@
+---
+layout: post
+title: Rails 2.2, bundler, rack and pow
+excerpt: How to set up Ruby on Rails 2.2 with bundler, rack and Pow
+---
+
+Yesterday I have upgraded our production server. I updated "rubygems":rubygems to version 1.8.5 and "bundler":bundler to 1.1.pre.5. I also updated "zubibu.com":zubibu 's staging server by uploading quite a few new gems. One of these actions (or all of them together) broke a few old, low-trafic "rails":rails websites. I didn't investigate what exactly did break them. All broken websites had one thing in common - they were so old that they didn't use bunlder to manage gems. 
+
+h3. Bundler
+
+Most of them was written in rails 2.3, so managing them to user bundler was preaty easy. You can "manual":bunlder-rails23 on bundler website how to do it and that simply wokrs. But one of the broken webisetes was running Rails 2.2.2. I googled if such old app can use bundler, but didn't find any answers. So I decided to try it. I started with the "inststructions":bundler-rails23 for rails 2.3 app.
+
+I have added this code to the @config/boot.rb@ file right above the line @Rails.boot!@
+
+{% highlight ruby %}
+class Rails::Boot
+  def run
+    load_initializer
+
+    Rails::Initializer.class_eval do
+      def load_gems
+        @bundler_loaded ||= Bundler.require :default, Rails.env
+      end
+    end
+
+    Rails::Initializer.run(:set_load_path)
+  end
+end
+{% endhighlight %}
+
+
+Then I created @config/preinitializer.rb@ file
+
+{% highlight ruby %}
+begin
+  require "rubygems"
+  require "bundler"
+rescue LoadError
+  raise "Could not load the bundler gem. Install it with `gem install bundler`."
+end
+
+if Gem::Version.new(Bundler::VERSION) <= Gem::Version.new("0.9.24")
+  raise RuntimeError, "Your bundler version is too old for Rails 2.3." +
+   "Run `gem install bundler` to upgrade."
+end
+
+begin
+  # Set up load paths for all bundled gems
+  ENV["BUNDLE_GEMFILE"] = File.expand_path("../../Gemfile", __FILE__)
+  Bundler.setup
+rescue Bundler::GemNotFound
+  raise RuntimeError, "Bundler couldn't find some gems." +
+    "Did you run `bundle install`?"
+end
+{% endhighlight %}
+
+And created the @Gemfile@
+
+{% highlight bash %}
+$ bundle init
+{% endhighlight %}
+
+I copied there all @config.gem@ directives from @confiv/environmet*@ files and lock the gems at the certain versions as the probably wouldn't run with old code.
+
+That would be all from gembundler instructions, so I created a gemset for this faling app and run @bundle install@. When I try to run tests I got this depracation warning:
+
+{% highlight bash %}
+rake/rdoctask is deprecated.  Use rdoc/task instead (in RDoc 2.4.2+)
+{% endhighlight %}
+
+To get rid of it just replace replace one line in your @Rakefile@
+
+{% highlight ruby %}
+# require 'rake/rdoctask'
+require 'rdoc/task'
+{% endhighlight %}
+
+and add @rdoc@ to your @Gemfile@
+
+{% highlight ruby %}
+#...
+gem 'rdoc'
+{% endhighlight %}
+
+After @bundle install@ all the tests passed. Yay!
+
+h3. Pow & Rack
+
+I run all my rails application using "Pow":pow. This one I wanted to run same as others. I just add a symbolic link in my @~./pow@ folder and visited an .dev url in the browser and I got this message:
+
+!/images/posts/2011-06-16-rails2.2-bunlder-rack-and-pow.textile/pow.png(If you’re using a version of Rails older than 2.3, you’ll need to upgrade first.)!
+
+Not good :(. They advised me to upgrade my application but I realy don't want to do. Before I googled how to upgrade from rails 2.2 to 2.3 I decided to give it a try and just add the @cofnig.ru@ file.
+
+{% highlight ruby %}
+require File.dirname(__FILE__) + '/config/environment'
+run ActionController::Dispatcher.new
+{% endhighlight %}
+
+Then I vited app's dev url in the browser just to get this message:
+
+{% highlight ruby %}
+MissingSourceFile: no such file to load -- rack
+{% endhighlight %}
+
+To fix it just add @gem 'rack'@ to your @Gemfile@. Than all works perfectly! Even my old rails 2.2 app.
+
+h3. tl;dr
+
+1. "Bundler":bundler works with rails 2.2 app.
+2. "Pow":pow works with rails 2.2 app even if docs says something else
+3. If you want to know how - read the whole thing!
+
+[rubygems]https://rubygems.org
+[bundler]http://gembundler.com
+[bundler-rails23]http://gembundler.com/rails23.html
+[zubibu]http://zuibu.com
+[rails]http://rubyonrails.org/
+[pow]http://pow.cx/
+
+
