@@ -29,18 +29,23 @@
           <li><a href="http://twitter.com/martinciu" target="blank">twitter</a></li>
           <li><a href="/archive.html">archive</a></li>
           <li><a href="/atom.xml">rss</a></li>
+          <li>
+            <form action="/search" method="get" class="bp inline">
+              <input type="search" name="query" placeholder="search"/>
+            </form>
+          </li>
         </ul>
       </div>
     </div>
     {{ content }}
     <div id="footer">
-      powered by <a href="http://jekyllrb.com/" traget="blank">jekyll</a> and <a href="http://beta.compass-style.org" traget="blank">compass</a>
+      powered by <a href="http://jekyllrb.com/" traget="blank">jekyll</a> and <a href="http://tapirgo.com/" traget="blank">Tapir</a>
       <br>hosted by <a href="https://github.com" traget="blank">GitHub</a>
     </div>
   </div>
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-152335-13']);
+    // _gaq.push(['_setAccount', 'UA-152335-13']);
     _gaq.push(['_trackPageview']);
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

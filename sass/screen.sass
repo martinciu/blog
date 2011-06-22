@@ -4,8 +4,9 @@
 @import partials/base
 // Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
+//@import blueprint/form
 // Import the non-default scaffolding module.
-@import blueprint/scaffolding
+//@import blueprint/scaffolding
 
 // To generate css equivalent to the blueprint css but with your
 // configuration applied, uncomment:
@@ -17,16 +18,16 @@
 body.bp
   +blueprint-typography(true)
   +blueprint-utilities
-  +blueprint-debug
+//  +blueprint-debug
   +blueprint-interaction
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
   pre
     :margin 0px
 form.bp
-  +blueprint-form
+//  +blueprint-inline-form
   // You'll probably want to remove the scaffolding once you start styling your site.
-  +blueprint-scaffolding
+//  +blueprint-scaffolding
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col
@@ -45,7 +46,7 @@ body.two-col
     a
       :text-decoration none
     #logo
-      +column(10)
+      +column(7)
       h1
         :margin-bottom 0px
         :font-family CuprumFFURegular, sans-serif
@@ -55,7 +56,7 @@ body.two-col
       a:hover
         :color red
     #menu
-      +column(14, true)
+      +column(17, true)
       :font-size 150%
       :font-family GnuolaneRegular, sans-serif
       a:hover
@@ -65,7 +66,11 @@ body.two-col
         :float right
         li
           :display inline
-          :padding-left 40px
+          :margin-left 40px
+          form
+            :width 100px
+            input
+              :width 90px
   #sidebar
     +column(8)
     :font-family GnuolaneRegular, sans-serif
