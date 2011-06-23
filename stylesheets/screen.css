@@ -510,6 +510,10 @@ body.two-col #content .post .highlight {
   -moz-border-radius: 10px;
 }
 /* line 126, ../sass/screen.sass */
+body.two-col #content .post .highlight pre {
+  margin: 0px;
+}
+/* line 128, ../sass/screen.sass */
 body.two-col #content .post-excerpt {
   font-family: LiberationSansRegular, sans-serif;
   margin-bottom: 20px;
@@ -536,7 +540,7 @@ body.two-col #content #search .result h6 {
   margin-bottom: 20px;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 133, ../sass/screen.sass */
+/* line 135, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;
