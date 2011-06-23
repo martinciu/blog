@@ -300,26 +300,26 @@ body.bp .bottom {
   padding-bottom: 0;
 }
 
-/* line 33, ../sass/screen.sass */
+/* line 41, ../sass/screen.sass */
 body.two-col {
   background-color: #eeeeee;
 }
-/* line 35, ../sass/screen.sass */
+/* line 43, ../sass/screen.sass */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 37, ../sass/screen.sass */
+/* line 45, ../sass/screen.sass */
 body.two-col #container a, body.two-col #container a:visited {
   color: #777777;
 }
-/* line 39, ../sass/screen.sass */
+/* line 47, ../sass/screen.sass */
 body.two-col #container a:hover {
   color: #333333;
 }
-/* line 41, ../sass/screen.sass */
+/* line 49, ../sass/screen.sass */
 body.two-col #header {
   display: inline;
   float: left;
@@ -331,15 +331,15 @@ body.two-col #header {
 * html body.two-col #header {
   overflow-x: hidden;
 }
-/* line 44, ../sass/screen.sass */
+/* line 52, ../sass/screen.sass */
 body.two-col #header a, body.two-col #header a:visited {
   color: #777777;
 }
-/* line 46, ../sass/screen.sass */
+/* line 54, ../sass/screen.sass */
 body.two-col #header a {
   text-decoration: none;
 }
-/* line 48, ../sass/screen.sass */
+/* line 56, ../sass/screen.sass */
 body.two-col #header #logo {
   display: inline;
   float: left;
@@ -350,21 +350,21 @@ body.two-col #header #logo {
 * html body.two-col #header #logo {
   overflow-x: hidden;
 }
-/* line 50, ../sass/screen.sass */
+/* line 58, ../sass/screen.sass */
 body.two-col #header #logo h1 {
   margin-bottom: 0px;
   font-family: CuprumFFURegular, sans-serif;
 }
-/* line 53, ../sass/screen.sass */
+/* line 61, ../sass/screen.sass */
 body.two-col #header #logo h4 {
   color: #bbbbbb;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 56, ../sass/screen.sass */
+/* line 64, ../sass/screen.sass */
 body.two-col #header #logo a:hover {
   color: red;
 }
-/* line 58, ../sass/screen.sass */
+/* line 66, ../sass/screen.sass */
 body.two-col #header #menu {
   display: inline;
   float: left;
@@ -377,29 +377,36 @@ body.two-col #header #menu {
 * html body.two-col #header #menu {
   overflow-x: hidden;
 }
-/* line 62, ../sass/screen.sass */
+/* line 70, ../sass/screen.sass */
 body.two-col #header #menu a:hover {
   text-decoration: underline;
 }
-/* line 64, ../sass/screen.sass */
+/* line 72, ../sass/screen.sass */
 body.two-col #header #menu ul {
   list-style-type: none;
   float: right;
 }
-/* line 67, ../sass/screen.sass */
+/* line 75, ../sass/screen.sass */
 body.two-col #header #menu ul li {
   display: inline;
   margin-left: 40px;
 }
-/* line 70, ../sass/screen.sass */
+/* line 78, ../sass/screen.sass */
 body.two-col #header #menu ul li form {
   width: 100px;
+  display: inline;
 }
-/* line 72, ../sass/screen.sass */
+/* line 81, ../sass/screen.sass */
 body.two-col #header #menu ul li form input {
   width: 90px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border: 1px solid #999999;
+  padding: 3px;
 }
-/* line 74, ../sass/screen.sass */
+/* line 90, ../sass/screen.sass */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -411,15 +418,23 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 77, ../sass/screen.sass */
-body.two-col #sidebar li {
+/* line 93, ../sass/screen.sass */
+body.two-col #sidebar ul {
+  list-style: none;
+}
+/* line 95, ../sass/screen.sass */
+body.two-col #sidebar ul li {
   font-family: GentiumBasicItalic, serif;
 }
-/* line 79, ../sass/screen.sass */
-body.two-col #sidebar li a {
+/* line 97, ../sass/screen.sass */
+body.two-col #sidebar ul li a {
   font-family: CuprumFFURegular, sans-serif;
 }
-/* line 81, ../sass/screen.sass */
+/* line 99, ../sass/screen.sass */
+body.two-col #sidebar h3 {
+  color: #999999;
+}
+/* line 101, ../sass/screen.sass */
 body.two-col #content {
   display: inline;
   float: left;
@@ -432,7 +447,7 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
-/* line 86, ../sass/screen.sass */
+/* line 106, ../sass/screen.sass */
 body.two-col #content .post .header {
   display: inline;
   float: left;
@@ -443,7 +458,7 @@ body.two-col #content .post .header {
 * html body.two-col #content .post .header {
   overflow-x: hidden;
 }
-/* line 88, ../sass/screen.sass */
+/* line 108, ../sass/screen.sass */
 body.two-col #content .post .header .title {
   display: inline;
   float: left;
@@ -455,18 +470,18 @@ body.two-col #content .post .header .title {
 * html body.two-col #content .post .header .title {
   overflow-x: hidden;
 }
-/* line 91, ../sass/screen.sass */
+/* line 32, ../sass/screen.sass */
 body.two-col #content .post .header .title h3 {
   margin-bottom: 0px;
   font-family: CuprumFFURegular, sans-serif;
 }
-/* line 94, ../sass/screen.sass */
+/* line 35, ../sass/screen.sass */
 body.two-col #content .post .header .title h6 {
   color: #bbbbbb;
   margin-bottom: 20px;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 98, ../sass/screen.sass */
+/* line 112, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar {
   display: inline;
   float: left;
@@ -477,39 +492,51 @@ body.two-col #content .post .header .social_bar {
 * html body.two-col #content .post .header .social_bar {
   overflow-x: hidden;
 }
-/* line 100, ../sass/screen.sass */
+/* line 114, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul {
   list-style-type: none;
   float: right;
   margin-right: 0px;
 }
-/* line 104, ../sass/screen.sass */
+/* line 118, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul li {
   display: inline-block;
 }
-/* line 106, ../sass/screen.sass */
+/* line 120, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #222222;
   color: white;
   padding: 10px;
   -moz-border-radius: 10px;
 }
-/* line 112, ../sass/screen.sass */
+/* line 126, ../sass/screen.sass */
 body.two-col #content .post-excerpt {
   font-family: LiberationSansRegular, sans-serif;
   margin-bottom: 20px;
 }
-/* line 115, ../sass/screen.sass */
+/* line 32, ../sass/screen.sass */
 body.two-col #content .post-excerpt h3 {
   margin-bottom: 0px;
   font-family: CuprumFFURegular, sans-serif;
 }
-/* line 118, ../sass/screen.sass */
+/* line 35, ../sass/screen.sass */
 body.two-col #content .post-excerpt h6 {
   color: #bbbbbb;
+  margin-bottom: 20px;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 121, ../sass/screen.sass */
+/* line 32, ../sass/screen.sass */
+body.two-col #content #search .result h3 {
+  margin-bottom: 0px;
+  font-family: CuprumFFURegular, sans-serif;
+}
+/* line 35, ../sass/screen.sass */
+body.two-col #content #search .result h6 {
+  color: #bbbbbb;
+  margin-bottom: 20px;
+  font-family: GentiumBasicItalic, serif;
+}
+/* line 133, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;

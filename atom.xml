@@ -23,6 +23,7 @@ layout: nil
    <link href="http://martinciu.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>martinciu.com{{ post.id }}</id>
+   <summary>{{ post.excerpt | xml_escape }}</summary>
    <content type="html">{{ post.content | xml_escape }}</content>
 
 {% comment %}

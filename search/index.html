@@ -6,11 +6,13 @@ title: Search results
 <script src="/javascripts/jquery-tapir.min.js"></script>
 
 <div id="content">
-  <img src="/images/loading.gif" style="border:none; margin:auto; width:32px; height:32px; box-shadow:none; display: block;"/>
+  <div id="search">
+    <img src="/images/loading.gif" style="border:none; margin:auto; width:32px; height:32px; box-shadow:none; display: block;"/>
+  </div>
 </div>
 
 <script>
-  $('#content').tapir({
+  $('#search').tapir({
     token: '4e0108e13f61b00a9b0000fa',
     complete: function(){ $('#content img').remove() }
   });
