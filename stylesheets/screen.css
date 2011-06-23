@@ -622,36 +622,83 @@ body.two-col #content {
   overflow-x: hidden;
 }
 /* line 81, ../sass/screen.sass */
-body.two-col #content .post h3, body.two-col #content .post-excerpt h3 {
+body.two-col #content .post .header {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 550px;
+}
+/* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html body.two-col #content .post .header {
+  overflow-x: hidden;
+}
+/* line 83, ../sass/screen.sass */
+body.two-col #content .post .header .title {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 390px;
+  display: inline-block;
+}
+/* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html body.two-col #content .post .header .title {
+  overflow-x: hidden;
+}
+/* line 86, ../sass/screen.sass */
+body.two-col #content .post .header .title h3 {
   margin-bottom: 0px;
   font-family: CuprumFFURegular, sans-serif;
 }
-/* line 84, ../sass/screen.sass */
-body.two-col #content .post h6, body.two-col #content .post-excerpt h6 {
+/* line 89, ../sass/screen.sass */
+body.two-col #content .post .header .title h6 {
   color: #bbbbbb;
   margin-bottom: 20px;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 88, ../sass/screen.sass */
-body.two-col #content .post {
-  font-family: LiberationSansRegular, sans-serif;
+/* line 93, ../sass/screen.sass */
+body.two-col #content .post .header .social_bar {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 150px;
 }
-/* line 90, ../sass/screen.sass */
+/* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html body.two-col #content .post .header .social_bar {
+  overflow-x: hidden;
+}
+/* line 95, ../sass/screen.sass */
+body.two-col #content .post .header .social_bar ul {
+  list-style-type: none;
+  float: right;
+  margin-right: 0px;
+}
+/* line 99, ../sass/screen.sass */
+body.two-col #content .post .header .social_bar ul li {
+  display: inline-block;
+}
+/* line 101, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #222222;
   color: white;
   padding: 10px;
   -moz-border-radius: 10px;
 }
-/* line 97, ../sass/screen.sass */
-body.two-col #content .post-excerpt h6 {
-  margin-bottom: 0px;
+/* line 107, ../sass/screen.sass */
+body.two-col #content .post-excerpt {
+  font-family: LiberationSansRegular, sans-serif;
+  margin-bottom: 20px;
 }
-/* line 99, ../sass/screen.sass */
+/* line 110, ../sass/screen.sass */
 body.two-col #content .post-excerpt h3 {
-  margin-top: 20px;
+  margin-bottom: 0px;
+  font-family: CuprumFFURegular, sans-serif;
 }
-/* line 101, ../sass/screen.sass */
+/* line 113, ../sass/screen.sass */
+body.two-col #content .post-excerpt h6 {
+  color: #bbbbbb;
+  font-family: GentiumBasicItalic, serif;
+}
+/* line 116, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;

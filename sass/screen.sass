@@ -77,16 +77,27 @@ body.two-col
     +column(14, true)
     +prepend(1)
     +append(1)
-    .post, .post-excerpt
-      h3
-        :margin-bottom 0px
-        :font-family CuprumFFURegular, sans-serif
-      h6
-        :color $light-gray
-        :margin-bottom 20px
-        :font-family GentiumBasicItalic, serif
     .post
-      :font-family LiberationSansRegular, sans-serif
+      .header
+        +column(14, true)
+        .title
+          +column(10)
+          :display inline-block
+          h3
+            :margin-bottom 0px
+            :font-family CuprumFFURegular, sans-serif
+          h6
+            :color $light-gray
+            :margin-bottom 20px
+            :font-family GentiumBasicItalic, serif
+        .social_bar
+          +column(4, true)
+          ul
+            :list-style-type none
+            :float right
+            :margin-right 0px
+            li
+              :display inline-block
       .highlight
         :background-color #222
         :color #FFF
@@ -94,10 +105,14 @@ body.two-col
         :-moz-border-radius 10px
         -webkit-border-radius 10px
     .post-excerpt
-      h6
-        :margin-bottom 0px
+      :font-family LiberationSansRegular, sans-serif
+      :margin-bottom 20px
       h3
-        :margin-top 20px
+        :margin-bottom 0px
+        :font-family CuprumFFURegular, sans-serif
+      h6
+        :color $light-gray
+        :font-family GentiumBasicItalic, serif
   #footer
     +column(24)
     :color $light-gray

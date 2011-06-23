@@ -3,8 +3,29 @@ layout: default
 ---
 <div id="content">
   <div class="post">
-    <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-    <h6>Posted on {{ page.date | date: "%A, %B %d, %Y" }}</h6>
+    <div class="header">
+      <div class="title">
+        <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+        <h6>Posted on {{ page.date | date: "%A, %B %d, %Y" }}</h6>
+      </div>
+      <div class="social_bar">
+        <ul>
+          <li>
+            <div>
+               <a href="http://twitter.com/share" class="twitter-share-button"
+                data-via="martinciu"
+                data-counturl="{{ page.url }}"
+                data-text="{{ post.title }}"
+                data-count="none"
+               >Tweet</a>
+            </div>
+          </li>
+          <li>
+            <div class="g-plusone" data-size="standard" data-count="false" href="{{ post.url }}"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
     {{ content }}
   </div>
   <div id="disqus_thread"></div>

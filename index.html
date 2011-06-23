@@ -5,8 +5,29 @@ layout: default
   <div class="posts-list">
     {% for post in site.posts limit:5 %}
       <div class="post">
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <h6>Posted on {{ post.date | date: "%A, %B %d, %Y" }}</h6>
+        <div class="header">
+          <div class="title">
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <h6>Posted on {{ page.date | date: "%A, %B %d, %Y" }}</h6>
+          </div>
+          <div class="social_bar">
+            <ul>
+              <li>
+                <div>
+                   <a href="http://twitter.com/share" class="twitter-share-button"
+                    data-via="martinciu"
+                    data-counturl="{{ post.url }}"
+                    data-text="{{ post.title }}"
+                    data-count="none"
+                   >Tweet</a>
+                </div>
+              </li>
+              <li>
+                <div class="g-plusone" data-size="standard" data-count="false" href="{{ post.url }}"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
         {{ post.content }}
       </div>
     {% endfor %}
