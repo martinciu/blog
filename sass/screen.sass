@@ -36,6 +36,9 @@ form.bp
     :color $light-gray
     :margin-bottom 20px
     :font-family GentiumBasicItalic, serif
+@mixin border-radius($radius)
+  :-moz-border-radius $radius
+  :-webkit-border-radius $radius
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col
@@ -54,7 +57,7 @@ body.two-col
     a
       :text-decoration none
     #logo
-      +column(7)
+      +column(10)
       h1
         :margin-bottom 0px
         :font-family CuprumFFURegular, sans-serif
@@ -64,7 +67,7 @@ body.two-col
       a:hover
         :color red
     #menu
-      +column(17, true)
+      +column(14, true)
       :font-size 150%
       :font-family GnuolaneRegular, sans-serif
       a:hover
@@ -80,10 +83,7 @@ body.two-col
             :display inline
             input
               :width 90px
-              :-moz-border-radius 5px
-              :-webkit-border-radius 5px
-              :border-width 1px
-              :border-style solid
+              @include border-radius(5px)
               :border 1px solid #999
               :padding 3px 3px 3px 14px
               :background  #fff url(/images/agile-toolkit-icons/atk-icons-nobg.png) no-repeat scroll 0px -318px
@@ -123,8 +123,7 @@ body.two-col
         :background-color #222
         :color #FFF
         :padding 10px
-        :-moz-border-radius 10px
-        -webkit-border-radius 10px
+        @include border-radius(10px)
         pre
           :margin 0px
     .post-excerpt
