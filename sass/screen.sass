@@ -86,7 +86,10 @@ body.two-col
               @include border-radius(5px)
               :border 1px solid #999
               :padding 3px 3px 3px 14px
-              :background  #fff url(/images/agile-toolkit-icons/atk-icons-nobg.png) no-repeat scroll 0px -318px
+              :background url(/images/agile-toolkit-icons/atk-icons-nobg.png) 0px -318px no-repeat scroll #fff
+              -webkit-appearance: none
+              -webkit-box-sizing: content-box
+              
               
               
   #sidebar
@@ -104,6 +107,10 @@ body.two-col
     +column(14, true)
     +prepend(1)
     +append(1)
+    h1
+      font-family: 'Allerta Stencil', arial, serif
+      :text-align center
+      :margin 40px 0px
     .post
       .header
         +column(14, true)

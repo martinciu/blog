@@ -403,9 +403,11 @@ body.two-col #header #menu ul li form input {
   -webkit-border-radius: 5px;
   border: 1px solid #999999;
   padding: 3px 3px 3px 14px;
-  background: white url(/images/agile-toolkit-icons/atk-icons-nobg.png) no-repeat scroll 0px -318px;
+  background: url(/images/agile-toolkit-icons/atk-icons-nobg.png) 0px -318px no-repeat scroll white;
+  -webkit-appearance: none;
+  -webkit-box-sizing: content-box;
 }
-/* line 92, ../sass/screen.sass */
+/* line 95, ../sass/screen.sass */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -417,23 +419,23 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 95, ../sass/screen.sass */
+/* line 98, ../sass/screen.sass */
 body.two-col #sidebar ul {
   list-style: none;
 }
-/* line 97, ../sass/screen.sass */
+/* line 100, ../sass/screen.sass */
 body.two-col #sidebar ul li {
   font-family: GentiumBasicItalic, serif;
 }
-/* line 99, ../sass/screen.sass */
+/* line 102, ../sass/screen.sass */
 body.two-col #sidebar ul li a {
   font-family: CuprumFFURegular, sans-serif;
 }
-/* line 101, ../sass/screen.sass */
+/* line 104, ../sass/screen.sass */
 body.two-col #sidebar h3 {
   color: #999999;
 }
-/* line 103, ../sass/screen.sass */
+/* line 106, ../sass/screen.sass */
 body.two-col #content {
   display: inline;
   float: left;
@@ -446,7 +448,13 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
-/* line 108, ../sass/screen.sass */
+/* line 110, ../sass/screen.sass */
+body.two-col #content h1 {
+  font-family: "Allerta Stencil", arial, serif;
+  text-align: center;
+  margin: 40px 0px;
+}
+/* line 115, ../sass/screen.sass */
 body.two-col #content .post .header {
   display: inline;
   float: left;
@@ -457,7 +465,7 @@ body.two-col #content .post .header {
 * html body.two-col #content .post .header {
   overflow-x: hidden;
 }
-/* line 110, ../sass/screen.sass */
+/* line 117, ../sass/screen.sass */
 body.two-col #content .post .header .title {
   display: inline;
   float: left;
@@ -480,7 +488,7 @@ body.two-col #content .post .header .title h6 {
   margin-bottom: 20px;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 114, ../sass/screen.sass */
+/* line 121, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar {
   display: inline;
   float: left;
@@ -491,17 +499,17 @@ body.two-col #content .post .header .social_bar {
 * html body.two-col #content .post .header .social_bar {
   overflow-x: hidden;
 }
-/* line 116, ../sass/screen.sass */
+/* line 123, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul {
   list-style-type: none;
   float: right;
   margin-right: 0px;
 }
-/* line 120, ../sass/screen.sass */
+/* line 127, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul li {
   display: inline-block;
 }
-/* line 122, ../sass/screen.sass */
+/* line 129, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #222222;
   color: white;
@@ -509,11 +517,11 @@ body.two-col #content .post .highlight {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 127, ../sass/screen.sass */
+/* line 134, ../sass/screen.sass */
 body.two-col #content .post .highlight pre {
   margin: 0px;
 }
-/* line 129, ../sass/screen.sass */
+/* line 136, ../sass/screen.sass */
 body.two-col #content .post-excerpt {
   font-family: LiberationSansRegular, sans-serif;
   margin-bottom: 20px;
@@ -540,7 +548,7 @@ body.two-col #content #search .result h6 {
   margin-bottom: 20px;
   font-family: GentiumBasicItalic, serif;
 }
-/* line 136, ../sass/screen.sass */
+/* line 143, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;
