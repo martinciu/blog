@@ -6,7 +6,7 @@ excerpt: How to set up Ruby on Rails 2.2 with bundler, rack and Pow
 
 Yesterday I have upgraded our production server. I updated "rubygems":rubygems to version 1.8.5 and "bundler":bundler to 1.1.pre.5. I also updated "zubibu.com":zubibu 's staging server by uploading quite a few new gems. One of these actions (or all of them together) broke a few old, low-trafic "rails":rails websites. I didn't investigate what exactly did break them. All broken websites had one thing in common - they were so old that they didn't use bunlder to manage gems. 
 
-h3. Bundler
+h4. Bundler
 
 Most of them was written in rails 2.3, so managing them to user bundler was preaty easy. You can "manual":bunlder-rails23 on bundler website how to do it and that simply wokrs. But one of the broken webisetes was running Rails 2.2.2. I googled if such old app can use bundler, but didn't find any answers. So I decided to try it. I started with the "inststructions":bundler-rails23 for rails 2.3 app.
 
@@ -84,7 +84,7 @@ gem 'rdoc'
 
 After @bundle install@ all the tests passed. Yay!
 
-h3. Pow & Rack
+h4. Pow & Rack
 
 I run all my rails application using "Pow":pow. This one I wanted to run same as others. I just add a symbolic link in my @~./pow@ folder and visited an .dev url in the browser and I got this message:
 
@@ -105,7 +105,7 @@ MissingSourceFile: no such file to load -- rack
 
 To fix it just add @gem 'rack'@ to your @Gemfile@. Than all works perfectly! Even my old rails 2.2 app.
 
-h3. tl;dr
+h4. tl;dr
 
 1. "Bundler":bundler works with rails 2.2 app.
 2. "Pow":pow works with rails 2.2 app even if docs says something else

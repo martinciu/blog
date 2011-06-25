@@ -26,7 +26,7 @@ $ compass watch
 
 That is preaty annoying to run two processes in two separate terminals. 
 
-h3. Foreman & Procfile
+h4. Foreman & Procfile
 
 And this is where "Foreman":foreman comes with help. "Foreman":foreman is a process manager for applications with multiple components. It manages Procfile-based applications. We have application with two components so this perfetly fits for our needs. All we need is to add @Procfile@ To make it work install foreman by
 

@@ -353,50 +353,51 @@ body.two-col #header #logo {
 /* line 61, ../sass/screen.sass */
 body.two-col #header #logo h1 {
   margin-bottom: 0px;
-  font-family: CuprumFFURegular, sans-serif;
+  font-family: Luckiest Guy, arial, serif;
 }
 /* line 64, ../sass/screen.sass */
-body.two-col #header #logo h4 {
+body.two-col #header #logo h2 {
   color: #bbbbbb;
-  font-family: GentiumBasicItalic, serif;
+  font-family: Just Me Again Down Here, serif;
+  margin-top: -20px;
 }
-/* line 67, ../sass/screen.sass */
+/* line 68, ../sass/screen.sass */
 body.two-col #header #logo a:hover {
   color: red;
 }
-/* line 69, ../sass/screen.sass */
+/* line 70, ../sass/screen.sass */
 body.two-col #header #menu {
   display: inline;
   float: left;
   margin-right: 0;
   width: 550px;
   font-size: 150%;
-  font-family: GnuolaneRegular, sans-serif;
+  font-family: "Oswald", serif;
 }
 /* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #header #menu {
   overflow-x: hidden;
 }
-/* line 73, ../sass/screen.sass */
+/* line 74, ../sass/screen.sass */
 body.two-col #header #menu a:hover {
   text-decoration: underline;
 }
-/* line 75, ../sass/screen.sass */
+/* line 76, ../sass/screen.sass */
 body.two-col #header #menu ul {
   list-style-type: none;
   float: right;
 }
-/* line 78, ../sass/screen.sass */
+/* line 79, ../sass/screen.sass */
 body.two-col #header #menu ul li {
   display: inline;
-  margin-left: 40px;
+  margin-left: 20px;
 }
-/* line 81, ../sass/screen.sass */
+/* line 82, ../sass/screen.sass */
 body.two-col #header #menu ul li form {
   width: 100px;
   display: inline;
 }
-/* line 84, ../sass/screen.sass */
+/* line 85, ../sass/screen.sass */
 body.two-col #header #menu ul li form input {
   width: 90px;
   -moz-border-radius: 5px;
@@ -407,35 +408,37 @@ body.two-col #header #menu ul li form input {
   -webkit-appearance: none;
   -webkit-box-sizing: content-box;
 }
-/* line 95, ../sass/screen.sass */
+/* line 96, ../sass/screen.sass */
 body.two-col #sidebar {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 310px;
-  font-family: GnuolaneRegular, sans-serif;
+  font-family: "Oswald", serif;
 }
 /* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 98, ../sass/screen.sass */
+/* line 99, ../sass/screen.sass */
 body.two-col #sidebar ul {
   list-style: none;
 }
-/* line 100, ../sass/screen.sass */
+/* line 101, ../sass/screen.sass */
 body.two-col #sidebar ul li {
-  font-family: GentiumBasicItalic, serif;
-}
-/* line 102, ../sass/screen.sass */
-body.two-col #sidebar ul li a {
-  font-family: CuprumFFURegular, sans-serif;
+  font-family: Francois One, sans-serif;
+  color: #bbbbbb;
 }
 /* line 104, ../sass/screen.sass */
+body.two-col #sidebar ul li a {
+  font-family: Arimo, sans-serif;
+  color: #777777;
+}
+/* line 107, ../sass/screen.sass */
 body.two-col #sidebar h3 {
   color: #999999;
 }
-/* line 106, ../sass/screen.sass */
+/* line 109, ../sass/screen.sass */
 body.two-col #content {
   display: inline;
   float: left;
@@ -448,13 +451,15 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
-/* line 110, ../sass/screen.sass */
-body.two-col #content h1 {
-  font-family: "Allerta Stencil", arial, serif;
-  text-align: center;
-  margin: 40px 0px;
+/* line 114, ../sass/screen.sass */
+body.two-col #content .post p, body.two-col #content .post h4 {
+  font-family: Droid Sans, sans-serif;
 }
-/* line 115, ../sass/screen.sass */
+/* line 116, ../sass/screen.sass */
+body.two-col #content .post code {
+  font-family: Droid Sans Mono, serif;
+}
+/* line 118, ../sass/screen.sass */
 body.two-col #content .post .header {
   display: inline;
   float: left;
@@ -465,7 +470,7 @@ body.two-col #content .post .header {
 * html body.two-col #content .post .header {
   overflow-x: hidden;
 }
-/* line 117, ../sass/screen.sass */
+/* line 120, ../sass/screen.sass */
 body.two-col #content .post .header .title {
   display: inline;
   float: left;
@@ -480,15 +485,15 @@ body.two-col #content .post .header .title {
 /* line 32, ../sass/screen.sass */
 body.two-col #content .post .header .title h3 {
   margin-bottom: 0px;
-  font-family: CuprumFFURegular, sans-serif;
+  font-family: Francois One, sans-serif;
 }
 /* line 35, ../sass/screen.sass */
 body.two-col #content .post .header .title h6 {
   color: #bbbbbb;
   margin-bottom: 20px;
-  font-family: GentiumBasicItalic, serif;
+  font-family: Arimo, serif;
 }
-/* line 121, ../sass/screen.sass */
+/* line 124, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar {
   display: inline;
   float: left;
@@ -499,17 +504,17 @@ body.two-col #content .post .header .social_bar {
 * html body.two-col #content .post .header .social_bar {
   overflow-x: hidden;
 }
-/* line 123, ../sass/screen.sass */
+/* line 126, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul {
   list-style-type: none;
   float: right;
   margin-right: 0px;
 }
-/* line 127, ../sass/screen.sass */
+/* line 130, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul li {
   display: inline-block;
 }
-/* line 129, ../sass/screen.sass */
+/* line 132, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #222222;
   color: white;
@@ -517,46 +522,46 @@ body.two-col #content .post .highlight {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 134, ../sass/screen.sass */
+/* line 137, ../sass/screen.sass */
 body.two-col #content .post .highlight pre {
   margin: 0px;
 }
-/* line 136, ../sass/screen.sass */
+/* line 139, ../sass/screen.sass */
 body.two-col #content .post-excerpt {
-  font-family: LiberationSansRegular, sans-serif;
   margin-bottom: 20px;
 }
 /* line 32, ../sass/screen.sass */
 body.two-col #content .post-excerpt h3 {
   margin-bottom: 0px;
-  font-family: CuprumFFURegular, sans-serif;
+  font-family: Francois One, sans-serif;
 }
 /* line 35, ../sass/screen.sass */
 body.two-col #content .post-excerpt h6 {
   color: #bbbbbb;
   margin-bottom: 20px;
-  font-family: GentiumBasicItalic, serif;
+  font-family: Arimo, serif;
 }
 /* line 32, ../sass/screen.sass */
 body.two-col #content #search .result h3 {
   margin-bottom: 0px;
-  font-family: CuprumFFURegular, sans-serif;
+  font-family: Francois One, sans-serif;
 }
 /* line 35, ../sass/screen.sass */
 body.two-col #content #search .result h6 {
   color: #bbbbbb;
   margin-bottom: 20px;
-  font-family: GentiumBasicItalic, serif;
+  font-family: Arimo, serif;
 }
-/* line 143, ../sass/screen.sass */
+/* line 145, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 950px;
   color: #bbbbbb;
-  font-family: GentiumBasicItalic, serif;
   text-align: center;
+  font-family: Droid Sans, sans-serif;
+  font-size: 0.8em;
 }
 /* line 147, ../../../.rvm/gems/ruby-1.9.2-p180@martinciu.github.com/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #footer {

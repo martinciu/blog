@@ -7,7 +7,7 @@ It will be another not very innovative post about a something that probably most
 
 @Proc.new@ and @lambda@ does almost the same job. They provide a dynamically created inline method. But they are slightly different. What are the differences? There are two (as far as I know at the moment)
 
-h3. 1. Acceptance of parameters
+h4. 1. Acceptance of parameters
 
 @Proc.new@ doesn’t care how many parameter do you provide, when @lambda@ needs exact number of parameters. Example:
 
@@ -25,7 +25,7 @@ pr.call(1, 2, 3, 4)
 # ArgumentError: wrong number of arguments (4 for 3)
 {% endhighlight %}
 
-h3. 2. Returning from a proc
+h4. 2. Returning from a proc
 @return@ called in @Proc.new@ block returns from enclosing method when return called in @lambda@ block returns from just a block.
 Examples:
 
