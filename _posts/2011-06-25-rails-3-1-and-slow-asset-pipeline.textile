@@ -67,5 +67,5 @@ I did it in my application and it works! It is usable again!
 [zubibu]http://zubibu.com
 [rails-31-upgrade]http://davidjrice.co.uk/2011/05/25/how-to-upgrade-a-rails-application-to-version-3-1-0.html
 [mongoid]http://mongoid.org/
-[perftools]github.com/tmm1/perftools.rb
+[perftools]https://github.com/tmm1/perftools.rb
 [rack-perftools]https://github.com/bhb/rack-perftools_profiler
