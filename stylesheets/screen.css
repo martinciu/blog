@@ -456,10 +456,14 @@ body.two-col #content .post p, body.two-col #content .post h4 {
   font-family: Droid Sans, sans-serif;
 }
 /* line 116, ../sass/screen.sass */
+body.two-col #content .post h4 {
+  margin-bottom: 0px;
+}
+/* line 118, ../sass/screen.sass */
 body.two-col #content .post code {
   font-family: Droid Sans Mono, serif;
 }
-/* line 118, ../sass/screen.sass */
+/* line 120, ../sass/screen.sass */
 body.two-col #content .post .header {
   display: inline;
   float: left;
@@ -470,7 +474,7 @@ body.two-col #content .post .header {
 * html body.two-col #content .post .header {
   overflow-x: hidden;
 }
-/* line 120, ../sass/screen.sass */
+/* line 122, ../sass/screen.sass */
 body.two-col #content .post .header .title {
   display: inline;
   float: left;
@@ -493,7 +497,7 @@ body.two-col #content .post .header .title h6 {
   margin-bottom: 20px;
   font-family: Arimo, serif;
 }
-/* line 124, ../sass/screen.sass */
+/* line 126, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar {
   display: inline;
   float: left;
@@ -504,17 +508,17 @@ body.two-col #content .post .header .social_bar {
 * html body.two-col #content .post .header .social_bar {
   overflow-x: hidden;
 }
-/* line 126, ../sass/screen.sass */
+/* line 128, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul {
   list-style-type: none;
   float: right;
   margin-right: 0px;
 }
-/* line 130, ../sass/screen.sass */
+/* line 132, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul li {
   display: inline-block;
 }
-/* line 132, ../sass/screen.sass */
+/* line 134, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #222222;
   color: white;
@@ -522,11 +526,11 @@ body.two-col #content .post .highlight {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-/* line 137, ../sass/screen.sass */
+/* line 139, ../sass/screen.sass */
 body.two-col #content .post .highlight pre {
   margin: 0px;
 }
-/* line 139, ../sass/screen.sass */
+/* line 141, ../sass/screen.sass */
 body.two-col #content .post-excerpt {
   margin-bottom: 20px;
 }
@@ -552,7 +556,7 @@ body.two-col #content #search .result h6 {
   margin-bottom: 20px;
   font-family: Arimo, serif;
 }
-/* line 145, ../sass/screen.sass */
+/* line 147, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;

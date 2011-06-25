@@ -1,0 +1,71 @@
+---
+layout: post
+title: Rails 3.1 and slow Asset Pipeline
+excerpt: Is your application extremely slow after upgrading to Rails 3.1? It's (probably) your fault!
+keywords: rails, ruby, mongoid, asset pipeline, rails 3.1
+---
+
+
+h4. tl;dr;
+
+*Rails 3.1 Asset Pipeline is not slow! It is your app!* If your app became slow after upgrading to Rails 3.1 and you use "Mongoid":mongoid - turn preloading models off. If this won't help profile your app with "rack-perftools_profiler":rack-perftools.
+
+h4. Rails 3.1
+
+Rails 3.1 is out for a while. It has a bunch of "new features and enhancements":rails-31-changelog and a bit of "controversy":rails-31-controversy. One of the new features that I wanted to play with was the asset pipeline. So after Release Candidate 4 was out I decided to upgrade "zubibu.com":zubibu to the newest version.
+
+h4. Upgrade
+
+It is pretty easy to upgrade. You can find detailed instructions on "David Rice's blog post":rails-31-upgrade. Some additional fixes are in comments below his post so read them as well. If you want to fully use asset pipeline you also have to modify all urls in your stylesheets from:
+
+{% highlight erb %}
+background: #ffffff url(images/backend/bg.png) repeat-x 0 0
+{% endhighlight %}
+
+to:
+
+{% highlight erb %}
+background: #ffffff url(<%= asset_path "backend/bg.png"%>) repeat-x 0 0
+{% endhighlight %}
+
+and add @.erb@ extension to all modified CSS files. One good regular expression should be enough for updating all your files.
+
+h4. Horror
+
+I restarted application and then the horror begun. It was impossible to load whole page with all the assts. Some assets returned 500 status code, some load in 30+ seconds. I tried some tricks with linking @app/assets/images/@ folder to @public/images/@. It helped a lot, as images was not served by rails, but still CSS and JavaScript files was very slow. If I don't reload pages by @CMD+R@ I was able to work, but styling pages was almost impossible.
+!/images/posts/2011-06-25-rails-3-1-and-slow-asset-pipeline/assets.jpg(slow assets pipeline)!
+
+h4. Why is it so slow?
+
+I couldn't believe that asset pipeline is so slow. Yes, it should be slower that serving static files from disk but it should not be THAT slow. I decided to check what is wrong. I created new rails 3.1 application, added one model with scaffold, one stylesheet and one javascript. I started the application and everything was alright. Assets was loading under 50ms. Then I've added more images, stylesheets, and javascripts. About twenty files together. And still everything was running smoothly. We use "mongoid":mongoid as an ORM in "zubibu":zubibu, so I migrated the only model to "mongoid":mongoid. But it still was damn fast! It was fast until I added more models to my test application. After adding 30 models (with relations between them) assets started to load in about 3 seconds each. The models was very simple without any logic - just a few fields and references each. It means that it could be models them self but the fact that there are many models. 
+
+h4. perftools.rb
+
+I didn't want to dig in "mongoid":mongoid source code for ever, so decided to use great profiling tool: "perftools.rb":perftools and because I need to profile web app I used "rack-perftools_profiler":rack-perftools middleware. I ran profiler two times: first with 1 model and than with 30 models loaded. Reading profile data is quite hard and, I am not the best in this, but I noticed that when app is running with many models loaded it spends much more time in @Mongoid::load_models@ method which looks like this:
+
+{% highlight ruby linenos linenostart=14 %}
+def load_models(app)
+  return unless ::Mongoid.preload_models
+  app.config.paths["app/models"].each do |path|
+    Dir.glob("#{path}/**/*.rb").sort.each do |file|
+      load_model(file.gsub("#{path}/" , "").gsub(".rb", ""))
+    end
+  end
+end
+{% endhighlight %}
+
+And what is @::Mongoid.preload_models@? It is config option turn on by default that reloads all models on each request. According to mongoid "documentation":mogoid-docs you can turn it off if don't use single collection inheritance in your app. To turn it off simply add following line to your @congif.applicaton@ file:
+
+{% highlight ruby %}
+config.mongoid.preload_models = false
+{% endhighlight %}
+
+I did it in my application and it works! It is usable again!
+
+[rails-31-changelog]http://weblog.rubyonrails.org/2011/5/22/rails-3-1-release-candidate
+[rails-31-controversy]http://www.rubyinside.com/rails-3-1-adopts-coffeescript-jquery-sass-and-controversy-4669.html
+[zubibu]http://zubibu.com
+[rails-31-upgrade]http://davidjrice.co.uk/2011/05/25/how-to-upgrade-a-rails-application-to-version-3-1-0.html
+[mongoid]http://mongoid.org/
+[perftools]github.com/tmm1/perftools.rb
+[rack-perftools]https://github.com/bhb/rack-perftools_profiler
