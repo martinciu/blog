@@ -70,7 +70,7 @@ body.two-col
     #menu
       +column(14, true)
       :font-size 150%
-      :font-family "Oswald", serif
+      :font-family Oswald, serif
       a:hover
         :text-decoration underline
       ul
@@ -95,7 +95,7 @@ body.two-col
               
   #sidebar
     +column(8)
-    :font-family "Oswald", serif
+    :font-family Oswald, serif
     ul
       :list-style none
       li
@@ -141,9 +141,22 @@ body.two-col
     .post-excerpt
       :margin-bottom 20px
       @include post-title
+      h6
+        :margin 0px
+      p
+        :font-family Droid Sans, sans-serif
     #search
       .result
         @include post-title
+  .not_found
+    h1
+      :font-family Luckiest Guy, arial, serif
+      :text-align center
+      :font-size 10em
+      :margin-top 100px
+    h4
+      :font-family Oswald, serif
+      :text-align center
   #footer
     +column(24)
     :color $light-gray
