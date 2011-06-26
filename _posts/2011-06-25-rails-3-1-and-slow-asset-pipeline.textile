@@ -54,7 +54,7 @@ def load_models(app)
 end
 {% endhighlight %}
 
-And what is @::Mongoid.preload_models@? It is config option turn on by default that reloads all models on each request. According to mongoid "documentation":mogoid-docs you can turn it off if don't use single collection inheritance in your app. To turn it off simply add following line to your @congif.applicaton@ file:
+And what is @::Mongoid.preload_models@? It is config option turn on by default that reloads all models on each request. According to mongoid "documentation":mongoid-docs you can turn it off if don't use single collection inheritance in your app. To turn it off simply add following line to your @congif.applicaton@ file:
 
 {% highlight ruby %}
 config.mongoid.preload_models = false
@@ -69,3 +69,4 @@ I did it in my application and it works! It is usable again!
 [mongoid]http://mongoid.org/
 [perftools]https://github.com/tmm1/perftools.rb
 [rack-perftools]https://github.com/bhb/rack-perftools_profiler
+[mongoid-docs]http://mongoid.org/docs/rails/railties.html
