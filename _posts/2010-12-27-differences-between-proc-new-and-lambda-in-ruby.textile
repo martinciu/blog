@@ -18,6 +18,7 @@ pr.call(1, 2, 3, 4)
 # 2
 # 3
 {% endhighlight %}
+...and...
 
 {% highlight ruby %}
 pr = lambda {|a,b,c| puts a,b,c}
@@ -45,6 +46,8 @@ puts "After my_method"
 # After my_method
 {% endhighlight %}
 
+but...
+
 {% highlight ruby %}
 def my_method
   puts "Starting my_method"
@@ -61,6 +64,7 @@ puts "After my_method"
 # Finishing my_method
 # After my_method
 {% endhighlight %}
+
 
 The other thing that is worth mentioning is that there exist an instruction called @proc@. What is wired, it works different in ruby 1.8 and in version 1.9. In Ruby 1.8 proc behaviors like @lambda@ when in Ruby 1.9 it works like @Proc.ne@w. Because of this, and because of ruumors that proc instruction will be removed in ruby 2.0, I don’t recommend using it in your code.
 
