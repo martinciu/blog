@@ -2,15 +2,16 @@
 layout: default
 title: 404 - page not found
 ---
-<div id="content">
-  <h1>I am sorry but it is 404 :(</h1>
-  Other interesting stuff:
+<div id="content" class="not_found">
+  <h1>404</h1>
+  <h4>The page that you are looking for does not exist.</h4>
+  <h4>Check these ones if you like:</h4>
   <div class="posts-list">
     {% for post in site.posts %}
       <div class="post-excerpt">
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <h6>Posted on {{ post.date | date: "%A, %B %d, %Y" }}</h6>
-        {{ post.excerpt }}
+        <h6>{{ post.date | date: "%A, %B %d, %Y" }}</h6>
+        <p>{{ post.excerpt }}</p>
       </div>
     {% endfor %}
   </div>
