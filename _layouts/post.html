@@ -27,6 +27,11 @@ layout: default
       </div>
     </div>
     {{ content }}
+    {% if page.hackernews_url %}
+    <p class="hackernews">
+      Liked this post? Share the <span class="heart">♥</span> on <a href="{{ page.hackernews_url }}">Hacker News</a>
+    </p>
+    {% endif %}
   </div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
