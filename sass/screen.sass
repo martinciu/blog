@@ -39,7 +39,10 @@ form.bp
 @mixin border-radius($radius)
   :-moz-border-radius $radius
   :-webkit-border-radius $radius
-
+@mixin border-shadow($horizontal, $vertical, $blur, $colour)
+  :-moz-box-shadow $horizontal $vertical $blur $colour
+  :box-shadow $horizontal $vertical $blur $colour
+  :-webkit-box-shadow $horizontal $vertical $blur $colour
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col
   :background-color #eee
@@ -91,8 +94,6 @@ body.two-col
               -webkit-appearance: none
               -webkit-box-sizing: content-box
               
-              
-              
   #sidebar
     +column(8)
     :font-family Oswald, serif
@@ -115,6 +116,8 @@ body.two-col
         :font-family Droid Sans, sans-serif
       h4
         :margin-bottom 0px
+      h4 + p
+        :text-indent 2em
       code
         :font-family Droid Sans Mono, serif
       .header
@@ -131,11 +134,15 @@ body.two-col
             :margin-right 0px
             li
               :display inline-block
+      img
+        @include border-shadow(5px, 5px, 7px, #999)
       .highlight
         :background-color #444444
         :color #D4D4D4
         :padding 10px
+        :margin-bottom 20px
         @include border-radius(10px)
+        @include border-shadow(5px, 5px, 7px, #999)
         pre
           :margin 0px
       .hackernews
@@ -147,7 +154,16 @@ body.two-col
           :background transparent url(/images/hackernews-icon.png) no-repeat center left
           :display inline-block
           :padding-left 16px
-          
+      blockquote
+        p:before
+          :font 48px Lucida Sans Unicode, Lucida Grande, sans-serif
+          :content "“"
+          :float left
+          :margin-top -12px
+        p:after
+          :content "”"
+          :font 48px Lucida Sans Unicode, Lucida Grande, sans-serif
+          :float right
     .post-excerpt
       :margin-bottom 20px
       @include post-title
