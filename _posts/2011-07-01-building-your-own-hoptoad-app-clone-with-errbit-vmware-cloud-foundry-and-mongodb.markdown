@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Building your own Hoptoad app clone with Errbit, VMware Cloud Foundry and MongoDB. 
-excerpt: Tutorial how to set up Rails 3 app on VMware Cloud Foundry. Sample app is Errbit with MongoDB as data store.
-keywords: rails, ruby, errbit, vmware, cloud foundry, mongoid, rails 3.1
-short_url: http://dd.erc
+title: Building your own Hoptoad app clone with Errbit, VMware Cloud Foundry and MongoDB
+excerpt: A simple Getting Started Tutorial VMware Cloud Foundry.
+keywords: rails, ruby, errbit, vmware, cloud foundry, mongoid, rails 3.1, hoptoad
 ---
 
 #### Disclaimer
