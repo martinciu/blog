@@ -14,8 +14,9 @@ layout: default
             <div>
                <a href="http://twitter.com/share" class="twitter-share-button"
                 data-via="martinciu"
-                data-counturl="{{ page.url }}"
-                data-text="{{ post.title }}"
+                data-counturl="{{ site.url }}{{ page.url }}"
+                data-url="{% if page.short_url %}{{ page.short_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}"
+                data-text="{{ page.title }}"
                 data-count="none"
                >Tweet</a>
             </div>
