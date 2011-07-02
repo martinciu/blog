@@ -27,7 +27,9 @@ layout: default
         </ul>
       </div>
     </div>
-    {{ content }}
+    <div class="content">
+      {{ content }}
+    </div>
     {% if page.hackernews_url %}
     <p class="hackernews">
       Liked this post? Share the <span class="heart">♥</span> on <a href="{{ page.hackernews_url }}">Hacker News</a>
@@ -44,4 +46,14 @@ layout: default
   </script>
 </div>
 <div id="sidebar">
+  <h3>Related posts</h3>
+  <ul>
+  {% for post in site.related_posts limit:3 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <br />
+      {{ post.date | date: "%B %d, %Y"}}
+    </li>
+  {% endfor %}
+  </ul>
 </div>

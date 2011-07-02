@@ -3,7 +3,7 @@
 #
 #destination: ./_site
 auto:        true
-lsi:         false # better related posts
+lsi:         true # better related posts
 server_port: 3000
 pygments:    true
 permalink:   /:year/:month/:title.html
