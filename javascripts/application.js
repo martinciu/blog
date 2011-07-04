@@ -7,5 +7,5 @@ $(function() {
       'monochrome' : false
   }).css('background-color', '#eee');
   
-  $(".post a").attr("target","_blank");
+  $(".post .content a").attr("target","_blank");
 });
