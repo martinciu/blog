@@ -32,7 +32,7 @@ this line of my template:
 
 throws this error:
 
-{% highlight %}
+{% highlight bash %}
 No expansion found for :contents
 {% endhighlight %}
 
