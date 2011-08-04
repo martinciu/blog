@@ -9,7 +9,7 @@ keywords: rails, ruby, rails 3.1, rc4, rc5, upgrade, upgrading, assets, bundler,
 
 Rails 3.1.0.rc5 is [out][rc5-announcement]. If your app doesn't use rails 3.1 yet you may want to read [this][rails-31-upgrade] and probably [this][rails-31-slow-assets]. If you have balls and you already use version 3.1, you probably would like to use rc5 ASAP. 
 
-#### Surpise
+#### Surprise
 
 Alright RC releases could not be much different from each other. You may think that simple change in `Gemfile` make you even more cool.
 
