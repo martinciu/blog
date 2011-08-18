@@ -107,12 +107,35 @@ body.two-col
           :color $dark-grey
     h3
       :color #999
+    #coderwall
+      :margin-bottom 20px
     #tweets
-      .tweet_list
+      ul.tweet_list
+        -webkit-border-radius: 0.5em
+        -moz-border-radius: 0.5em
+        border-radius: 0.5em
+        list-style: none
+        margin: 0
+        padding: 0
+        overflow-y: hidden
+        .awesome, .epic
+          text-transform: uppercase
+        li
+          overflow-y: auto
+          overflow-x: hidden
+          padding: 0.5em
         .tweet_time
-          :font-family Francois One, sans-serif
-          :color $light-gray
-          
+          a
+            :font-family Francois One, sans-serif
+            :color $light-gray
+        .tweet_text
+          :font-family Arimo, sans-serif
+          :color $dark-grey
+        .tweet_avatar
+          padding-right: .5em
+          float: left
+          img
+            :vertical-align middle
       
   #content
     +column(14, true)

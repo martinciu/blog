@@ -39,11 +39,11 @@ $(function() {
     join_text: "auto",
     avatar_size: 32,
     count: 10,
-    auto_join_text_default: "we said,", 
-    auto_join_text_ed: "we",
-    auto_join_text_ing: "we were",
-    auto_join_text_reply: "we replied to",
-    auto_join_text_url: "we were checking out",
+    auto_join_text_default: "I said,", 
+    auto_join_text_ed: "I",
+    auto_join_text_ing: "I was",
+    auto_join_text_reply: "I replied to",
+    auto_join_text_url: "I said,",
     loading_text: "loading tweets..."
   });
 });

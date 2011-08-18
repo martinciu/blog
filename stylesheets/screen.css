@@ -439,12 +439,50 @@ body.two-col #sidebar ul li a {
 body.two-col #sidebar h3 {
   color: #999999;
 }
-/* line 112, ../sass/screen.sass */
-body.two-col #sidebar #tweets .tweet_list .tweet_time {
+/* line 110, ../sass/screen.sass */
+body.two-col #sidebar #coderwall {
+  margin-bottom: 20px;
+}
+/* line 113, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+/* line 121, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list .awesome, body.two-col #sidebar #tweets ul.tweet_list .epic {
+  text-transform: uppercase;
+}
+/* line 123, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list li {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5em;
+}
+/* line 128, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list .tweet_time a {
   font-family: Francois One, sans-serif;
   color: #bbbbbb;
 }
-/* line 117, ../sass/screen.sass */
+/* line 131, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list .tweet_text {
+  font-family: Arimo, sans-serif;
+  color: #777777;
+}
+/* line 134, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list .tweet_avatar {
+  padding-right: 0.5em;
+  float: left;
+}
+/* line 137, ../sass/screen.sass */
+body.two-col #sidebar #tweets ul.tweet_list .tweet_avatar img {
+  vertical-align: middle;
+}
+/* line 140, ../sass/screen.sass */
 body.two-col #content {
   display: inline;
   float: left;
@@ -457,27 +495,27 @@ body.two-col #content {
 * html body.two-col #content {
   overflow-x: hidden;
 }
-/* line 122, ../sass/screen.sass */
+/* line 145, ../sass/screen.sass */
 body.two-col #content .post p, body.two-col #content .post h4 {
   font-family: Droid Sans, sans-serif;
 }
-/* line 124, ../sass/screen.sass */
+/* line 147, ../sass/screen.sass */
 body.two-col #content .post h4 {
   margin-bottom: 0px;
 }
-/* line 126, ../sass/screen.sass */
+/* line 149, ../sass/screen.sass */
 body.two-col #content .post h4 + p {
   text-indent: 2em;
 }
-/* line 128, ../sass/screen.sass */
+/* line 151, ../sass/screen.sass */
 body.two-col #content .post code {
   font-family: Droid Sans Mono, serif;
 }
-/* line 130, ../sass/screen.sass */
+/* line 153, ../sass/screen.sass */
 body.two-col #content .post p {
   line-height: 140%;
 }
-/* line 132, ../sass/screen.sass */
+/* line 155, ../sass/screen.sass */
 body.two-col #content .post .header {
   display: inline;
   float: left;
@@ -488,7 +526,7 @@ body.two-col #content .post .header {
 * html body.two-col #content .post .header {
   overflow-x: hidden;
 }
-/* line 134, ../sass/screen.sass */
+/* line 157, ../sass/screen.sass */
 body.two-col #content .post .header .title {
   display: inline;
   float: left;
@@ -511,7 +549,7 @@ body.two-col #content .post .header .title h6 {
   margin-bottom: 20px;
   font-family: Arimo, serif;
 }
-/* line 138, ../sass/screen.sass */
+/* line 161, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar {
   display: inline;
   float: left;
@@ -522,23 +560,23 @@ body.two-col #content .post .header .social_bar {
 * html body.two-col #content .post .header .social_bar {
   overflow-x: hidden;
 }
-/* line 140, ../sass/screen.sass */
+/* line 163, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul {
   list-style-type: none;
   float: right;
   margin-right: 0px;
 }
-/* line 144, ../sass/screen.sass */
+/* line 167, ../sass/screen.sass */
 body.two-col #content .post .header .social_bar ul li {
   display: inline-block;
 }
-/* line 146, ../sass/screen.sass */
+/* line 169, ../sass/screen.sass */
 body.two-col #content .post img {
   -moz-box-shadow: 5px 5px 7px #999999;
   box-shadow: 5px 5px 7px #999999;
   -webkit-box-shadow: 5px 5px 7px #999999;
 }
-/* line 148, ../sass/screen.sass */
+/* line 171, ../sass/screen.sass */
 body.two-col #content .post .highlight {
   background-color: #444444;
   color: #d4d4d4;
@@ -550,40 +588,40 @@ body.two-col #content .post .highlight {
   box-shadow: 5px 5px 7px #999999;
   -webkit-box-shadow: 5px 5px 7px #999999;
 }
-/* line 155, ../sass/screen.sass */
+/* line 178, ../sass/screen.sass */
 body.two-col #content .post .highlight pre {
   margin: 0px;
   overflow: auto;
 }
-/* line 158, ../sass/screen.sass */
+/* line 181, ../sass/screen.sass */
 body.two-col #content .post .hackernews {
   font-size: 1.3em;
   text-align: right;
 }
-/* line 161, ../sass/screen.sass */
+/* line 184, ../sass/screen.sass */
 body.two-col #content .post .hackernews .heart {
   color: #cc0000;
 }
-/* line 163, ../sass/screen.sass */
+/* line 186, ../sass/screen.sass */
 body.two-col #content .post .hackernews a {
   background: transparent url(/images/hackernews-icon.png) no-repeat center left;
   display: inline-block;
   padding-left: 16px;
 }
-/* line 168, ../sass/screen.sass */
+/* line 191, ../sass/screen.sass */
 body.two-col #content .post blockquote p:before {
   font: 48px Lucida Sans Unicode, Lucida Grande, sans-serif;
   content: "“";
   float: left;
   margin-top: -12px;
 }
-/* line 173, ../sass/screen.sass */
+/* line 196, ../sass/screen.sass */
 body.two-col #content .post blockquote p:after {
   content: "”";
   font: 48px Lucida Sans Unicode, Lucida Grande, sans-serif;
   float: right;
 }
-/* line 177, ../sass/screen.sass */
+/* line 200, ../sass/screen.sass */
 body.two-col #content .post-excerpt {
   margin-bottom: 20px;
 }
@@ -598,11 +636,11 @@ body.two-col #content .post-excerpt h6 {
   margin-bottom: 20px;
   font-family: Arimo, serif;
 }
-/* line 180, ../sass/screen.sass */
+/* line 203, ../sass/screen.sass */
 body.two-col #content .post-excerpt h6 {
   margin: 0px;
 }
-/* line 182, ../sass/screen.sass */
+/* line 205, ../sass/screen.sass */
 body.two-col #content .post-excerpt p {
   font-family: Droid Sans, sans-serif;
 }
@@ -617,19 +655,19 @@ body.two-col #content #search .result h6 {
   margin-bottom: 20px;
   font-family: Arimo, serif;
 }
-/* line 188, ../sass/screen.sass */
+/* line 211, ../sass/screen.sass */
 body.two-col .not_found h1 {
   font-family: Luckiest Guy, arial, serif;
   text-align: center;
   font-size: 10em;
   margin-top: 100px;
 }
-/* line 193, ../sass/screen.sass */
+/* line 216, ../sass/screen.sass */
 body.two-col .not_found h4 {
   font-family: Oswald, serif;
   text-align: center;
 }
-/* line 196, ../sass/screen.sass */
+/* line 219, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;
