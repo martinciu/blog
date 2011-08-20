@@ -46,7 +46,7 @@ $(function() {
     auto_join_text_url: "I said,",
     loading_text: "loading tweets..."
   });
-  if($("#projects")) {
+  $("#projects").each(function() {
     var featured_projects = {
       "fuubar-cucumber": {rubygems: true}, 
       "thumbs": {rubygems: true}, 
@@ -91,5 +91,5 @@ $(function() {
         $.tmpl( projectTemplate, attributes ).appendTo( "#projects" );
       });
     });
-  }
+  });
 });
