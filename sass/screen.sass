@@ -49,14 +49,14 @@ body.two-col
   #container
     +container
     a, a:visited
-      :color $dark-grey
+      :color $dark-gray
     a:hover
       :color #333
   #header
     +column(24)
     :margin-top 20px
     a, a:visited
-      :color $dark-grey
+      :color $dark-gray
     a
       :text-decoration none
     #logo
@@ -104,7 +104,7 @@ body.two-col
         :color $light-gray
         a
           :font-family Arimo, sans-serif
-          :color $dark-grey
+          :color $dark-gray
     h3
       :color #999
     #coderwall
@@ -130,7 +130,7 @@ body.two-col
             :color $light-gray
         .tweet_text
           :font-family Arimo, sans-serif
-          :color $dark-grey
+          :color $dark-gray
         .tweet_avatar
           padding-right: .5em
           float: left
@@ -207,6 +207,27 @@ body.two-col
     #search
       .result
         @include post-title
+    #projects
+      @include post-title
+      h2
+        :font-family Oswald, serif
+        :text-align center 
+        :color $dark-gray
+        :margin-bottom 0px
+      h3
+        :color $dark-gray
+      h4
+        :font-family Oswald, serif
+        :text-align center
+        :color $light-gray
+        a 
+          :color $light-gray
+      h6
+        :margin-bottom 0px
+        a
+          :color $light-gray
+        strong
+          :color $dark-gray
   .not_found
     h1
       :font-family Luckiest Guy, arial, serif

@@ -655,19 +655,63 @@ body.two-col #content #search .result h6 {
   margin-bottom: 20px;
   font-family: Arimo, serif;
 }
-/* line 211, ../sass/screen.sass */
+/* line 32, ../sass/screen.sass */
+body.two-col #content #projects h3 {
+  margin-bottom: 0px;
+  font-family: Francois One, sans-serif;
+}
+/* line 35, ../sass/screen.sass */
+body.two-col #content #projects h6 {
+  color: #bbbbbb;
+  margin-bottom: 20px;
+  font-family: Arimo, serif;
+}
+/* line 212, ../sass/screen.sass */
+body.two-col #content #projects h2 {
+  font-family: Oswald, serif;
+  text-align: center;
+  color: #777777;
+  margin-bottom: 0px;
+}
+/* line 217, ../sass/screen.sass */
+body.two-col #content #projects h3 {
+  color: #777777;
+}
+/* line 219, ../sass/screen.sass */
+body.two-col #content #projects h4 {
+  font-family: Oswald, serif;
+  text-align: center;
+  color: #bbbbbb;
+}
+/* line 223, ../sass/screen.sass */
+body.two-col #content #projects h4 a {
+  color: #bbbbbb;
+}
+/* line 225, ../sass/screen.sass */
+body.two-col #content #projects h6 {
+  margin-bottom: 0px;
+}
+/* line 227, ../sass/screen.sass */
+body.two-col #content #projects h6 a {
+  color: #bbbbbb;
+}
+/* line 229, ../sass/screen.sass */
+body.two-col #content #projects h6 strong {
+  color: #777777;
+}
+/* line 232, ../sass/screen.sass */
 body.two-col .not_found h1 {
   font-family: Luckiest Guy, arial, serif;
   text-align: center;
   font-size: 10em;
   margin-top: 100px;
 }
-/* line 216, ../sass/screen.sass */
+/* line 237, ../sass/screen.sass */
 body.two-col .not_found h4 {
   font-family: Oswald, serif;
   text-align: center;
 }
-/* line 219, ../sass/screen.sass */
+/* line 240, ../sass/screen.sass */
 body.two-col #footer {
   display: inline;
   float: left;
