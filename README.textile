@@ -1,3 +1,5 @@
-h1. This is the data for my blog
+h1. martinciu's dev blog
 
-"martinciu.com":http://martinciu.com
+h3. about ruby, rails, javascript, nodejs, coffeescript
+
+Read it at "http://martinciu.com":http://martinciu.com
