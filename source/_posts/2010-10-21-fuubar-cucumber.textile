@@ -1,0 +1,29 @@
+---
+layout: post
+title: fuubar-cucumber
+excerpt: The instafailing Cucumber progress bar formatter
+---
+A few days ago "Jeff Kreeftmeijer":jeff_kreeftmeijer released "Fuubar: the instafailing RSpec progress bar formatter":fuubar. It is great, and I use it as default formatter in all my projects. As I started to use it I realised that it would be great to have similar formatter for "Cucumber":cucumber. At first I wanted to add cucuber formatter class to "Jeff’s gem":foobar_gem, but later I decided to make it a separet gam because of gem dependencies.
+
+This is where "fuubar-cucumber":fuubar_cucumber came from. Installation is simple. Just add it to your gem file:
+
+{% highlight ruby %}
+
+gem 'fuubar-cucumber'
+
+{% endhighlight %}
+
+or install manualy
+
+{% highlight bash %}
+
+$ gem install fuubar-cucumber
+
+{% endhighlight %}
+and from now on you can run your cucumber features with ‘–format Cucumber::Formatter::Fuubar’ option. Hope you find it useful.
+
+[jeff_kreeftmeijer]http://jeffkreeftmeijer.com/
+[fuubar]http://jeffkreeftmeijer.com/2010/fuubar-the-instafailing-rspec-progress-bar-formatter/
+[cucumber]https://github.com/aslakhellesoy/cucumber
+[foobar_gem]https://github.com/jeffkreeftmeijer/fuubar
+[fuubar_cucumber]https://github.com/martinciu/fuubar-cucumber
