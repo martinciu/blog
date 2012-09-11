@@ -17,35 +17,35 @@ When I decided to give hubot a try on [Heroku][heroku] I googled for it and foun
 
 You will need a [ruby][ruby], [git][git], [node.js][nodejs], [npm][npm] and a heroku gem installed. Ruby and git is pretty common. You will install heroku gem by:
 
-{% highlight bash %}
+``` bash
 $ gem install heroku
-{% endhighlight %}
+```
 
 then node.js with Homebrew
 
-{% highlight bash %}
+``` bash
 $ brew install node
-{% endhighlight %}
+```
 
 and npm
 
-{% highlight bash %}
+``` bash
 $ curl http://npmjs.org/install.sh | sh
-{% endhighlight %}
+```
 
 #### Things done locally
 
 Clone [hubot repository][hubot-repo] and create a new directory that will deployed to heroku.
 
-{% highlight bash %}
+``` bash
 $ git clone git://github.com/github/hubot.git
 $ cd hubot
 $ npm install    # install all required dependencies
 $ bin/hubot --create ../acmebot
-{% endhighlight %}
+```
 
 If you go to the created directory you should see file structure similar to this:
-{% highlight bash %}
+``` bash
 $ cd ../acmebot
 $ ls -l
 ~/www/blog/hubot/acmebot  
@@ -56,32 +56,32 @@ drwxr-xr-x   3 martinciu  staff   102 31 paź 21:28 bin
 -rw-r--r--   1 martinciu  staff    56 31 paź 21:28 hubot-scripts.json
 -rw-r--r--   1 martinciu  staff   518 31 paź 21:28 package.json
 drwxr-xr-x  12 martinciu  staff   408 31 paź 21:28 scripts
-{% endhighlight %}
+```
 
 This will be your hubot application that you will deploy to heroku. First create a new git repository.
-{% highlight bash %}
+``` bash
 $ git init .
 $ git add .
 $ git commit -m "initial commit"
-{% endhighlight %}
+```
 
 Now you can create a new heroku app.
 
-{% highlight bash %}
+``` bash
 $ heroku create acmebot --stack cedar
-{% endhighlight %}
+```
 
 And now you can deploy your own hubot to heroku. 
 
-{% highlight bash %}
+``` bash
 $ git push heroku
-{% endhighlight %}
+```
 
 #### Heroku configuration
 
 It is deployed, but hubot won't join any [campfire][campfire] room because it doesn't know anything about it. You have to tell him what room(s) should he go to. You can do it by heroku configuration variables.
 
-{% highlight bash %}
+``` bash
 # Campfire user's token. You can find it on user's profile pages.
 # You should probably have additional campfire user for a hubot 
 $ heroku config:add HUBOT_CAMPFIRE_TOKEN=secret
@@ -89,27 +89,27 @@ $ heroku config:add HUBOT_CAMPFIRE_TOKEN=secret
 $ heroku config:add HUBOT_CAMPFIRE_ROOMS=123 
 # your campfire account subdoamin
 $ heroku config:add HUBOT_CAMPFIRE_ACCOUNT="acme"
-{% endhighlight %}
+```
 
 For some scripts [Redis][redis] is required. You can add a free [RedisToGo][redistogo] service by typing:
 
-{% highlight bash %}
+``` bash
 $ heroku addons:add redistogo:nano
-{% endhighlight %}
+```
 
 All is set up. Now you can start hubot:
 
-{% highlight bash %}
+``` bash
 $ heroku ps:scale app=1 
-{% endhighlight %}
+```
 
 #### It's alive!
 
 Now if you go to you campfire room and type
 
-{% highlight bash %}
+``` bash
 $ Hubot help 
-{% endhighlight %}
+```
 
 you should get a list of commands that your Hubot is familiar with. 
 
@@ -117,15 +117,15 @@ you should get a list of commands that your Hubot is familiar with.
 
 If hubot doesn't speak to you, it means that something went wrong. In that case you can check heroku logs by typing in console:
 
-{% highlight bash %}
+``` bash
 $ heroku logs 
-{% endhighlight %}
+```
 
 You can also check application status by typing:
 
-{% highlight bash %}
+``` bash
 $ heroku ps 
-{% endhighlight %}
+```
 
 
 #### More scripts
@@ -135,15 +135,15 @@ You have just deployed a basic hubot set up. If you want to add more commands yo
 
 Hubot only talks to you if you call him by name. And it is a new of the user who's token hubot uses. You can specify that name in the `Procfile`
 
-{% highlight ruby %}
+``` ruby
 app: bin/hubot --adapter campfire --name acmebot --enable-slash
-{% endhighlight %}
+```
 
 And if you don't want to talk to hubot by name you can add `--enable-slash` option. It will allow to replace robot's name with `/`. Example:
 
-{% highlight bash %}
+``` bash
 /mustache me lady gaga 
-{% endhighlight %}
+```
 
 [tutorial-1]: https://github.com/github/hubot/wiki/Hubot-on-Heroku
 [tutorial-2]: http://apocryph.org/2011/10/29/how-i-got-hubot-deployed-to-heroku/
