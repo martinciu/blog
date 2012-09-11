@@ -2,17 +2,8 @@
 // To give it a try, uncomment some of the lines below rebuild your blog, and see how it works.
 // If you need a handy color picker try http://hslpicker.com
 
-// Main Section Colors
-$main-bg: #eee;
-$page-bg: #eee;
-$article-border: #eeeeee !default;
-$noise-bg: image-url('noise.png') top left !default;
-
-//header
-$header-bg: $main-bg;
-$title-color: #777; 
-$subtitle-color: #bbb;
-
+//$header-bg: #263347;
+//$subtitle-color: lighten($header-bg, 58);
 //$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
 //$nav-bg-front: image-url('noise.png');
 //$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
