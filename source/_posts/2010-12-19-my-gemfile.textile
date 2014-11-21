@@ -1,0 +1,56 @@
+---
+layout: post
+title: My Gemfile
+excerpt: For each new rails project I almost always put same gems to the Gemfile with initial commit. Here is my gemfile compiled from a few recent projects. Hope some of you find something new for your projects.
+---
+For each new rails project I almost always put same gems to the Gemfile with initial commit. Here is my gemfile compiled from a few recent projects. Hope some of you find something new for your projects.
+
+{% highlight ruby %}
+source 'http://rubygems.org'
+ 
+gem 'rails'               # pretty obvious
+gem 'mysql2'              # or mongoid if I'm not using mysql
+gem 'devise'              # authentication done right
+gem 'newrelic_rpm'        # best monitoring service for me, very useful
+                          # in development too
+gem 'inherited_resources' # makes my controller DRY
+gem 'formtastic'          # for less painful forms
+gem 'carrier_wave'        # cool way in managing uploaded files
+gem 'hoptoad_notifier'    # simple and cheap error notification service
+gem 'haml'                # makes views more readable
+gem 'haml-rails'          # adds haml in generators
+gem 'rails3-generators'   # add rails3 compatible generators to gems that
+                          # don't have them
+gem 'jquery-rails'        # to replace prototype
+gem 'jammit'              # powerful asset packager
+gem 'resque'              # for background jobs
+ 
+group :development do
+  gem 'mail_safe'         # it makes you sure that you won't send test
+                          # email to all your user base
+end
+ 
+group :development, :test do
+  gem 'cucumber-rails'    # it knows how your application should behave
+  gem 'database_cleaner'  # easily cleans your database during tests
+  gem 'capybara'          # best browser simulator
+  gem 'rspec-rails'       # good test-unit replacement
+  gem 'machinist'         # fixtures are fun again
+  gem 'faker'             # to generating tons of fake data
+  gem 'pickle'            # easy model creations and more for cucumber
+  gem 'email_spec'        # rspec matchers for emails
+  gem 'timecop'           # great tool if your application time sensitive
+  gem 'shoulda'           # useful macros for rspec
+  gem 'launchy'           # simple tool launching applications from ruby
+  gem 'capistrano'        # my tool of choice for deployment
+  gem 'capistrano-ext'    # with some extensions for multistage
+  gem 'bond'              # makes irb more useful
+  gem 'rcov'              # code coverage tool
+  gem 'fuubar'            # progress bar rspec formatter
+  gem 'fuubar-cucumber'   # progress bar cucumber formatter
+  gem 'chronic'           # easy time parsing
+  gem 'fakeweb'           # for mocking net/http connections
+  gem 'vcr'               # records and plays back http calls
+end
+{% endhighlight %}
+I hope you find at least one gem that you haven’t heard about.

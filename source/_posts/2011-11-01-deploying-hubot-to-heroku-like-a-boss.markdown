@@ -1,0 +1,164 @@
+---
+layout: post
+title: Deploying Hubot to Heroku like a boss
+excerpt: How to get running Hubot on heroku in the right way
+keywords: hubot, heroku, npm, nodejs, node, coffeescript, javascript, deploying, git, github, homebrew, redis
+---
+
+#### What is Hubot?
+
+[Hubot][hubot] was an almost mythical GitHub [campfire][campfire] bot. They use it for deploying, automate a lot of tasks, and to be a source of fun in the company. Was, because they [open sourced][hubot-released] it some time age.
+
+#### Hubot & Heroku
+
+When I decided to give hubot a try on [Heroku][heroku] I googled for it and found [a few][tutorial-1] [tutorials][tutorial-2] and [blog posts][tutorial-3]. All of them advise to download (or clone) main [hubot repository][hubot-repo] and deploy it to heroku. In may opinion this is not the best way to do it. This post describes how to create separated deployable hubot application.
+
+#### Tools needed
+
+You will need a [ruby][ruby], [git][git], [node.js][nodejs], [npm][npm] and a heroku gem installed. Ruby and git is pretty common. You will install heroku gem by:
+
+{% highlight bash %}
+$ gem install heroku
+{% endhighlight %}
+
+then node.js with Homebrew
+
+{% highlight bash %}
+$ brew install node
+{% endhighlight %}
+
+and npm
+
+{% highlight bash %}
+$ curl http://npmjs.org/install.sh | sh
+{% endhighlight %}
+
+#### Things done locally
+
+Clone [hubot repository][hubot-repo] and create a new directory that will deployed to heroku.
+
+{% highlight bash %}
+$ git clone git://github.com/github/hubot.git
+$ cd hubot
+$ npm install    # install all required dependencies
+$ bin/hubot --create ../acmebot
+{% endhighlight %}
+
+If you go to the created directory you should see file structure similar to this:
+{% highlight bash %}
+$ cd ../acmebot
+$ ls -l
+~/www/blog/hubot/acmebot  
+total 32
+-rw-r--r--   1 martinciu  staff    36 31 paź 21:28 Procfile
+-rw-r--r--   1 martinciu  staff  3411 31 paź 21:28 README.md
+drwxr-xr-x   3 martinciu  staff   102 31 paź 21:28 bin
+-rw-r--r--   1 martinciu  staff    56 31 paź 21:28 hubot-scripts.json
+-rw-r--r--   1 martinciu  staff   518 31 paź 21:28 package.json
+drwxr-xr-x  12 martinciu  staff   408 31 paź 21:28 scripts
+{% endhighlight %}
+
+This will be your hubot application that you will deploy to heroku. First create a new git repository.
+{% highlight bash %}
+$ git init .
+$ git add .
+$ git commit -m "initial commit"
+{% endhighlight %}
+
+Now you can create a new heroku app.
+
+{% highlight bash %}
+$ heroku create acmebot --stack cedar
+{% endhighlight %}
+
+And now you can deploy your own hubot to heroku. 
+
+{% highlight bash %}
+$ git push heroku
+{% endhighlight %}
+
+#### Heroku configuration
+
+It is deployed, but hubot won't join any [campfire][campfire] room because it doesn't know anything about it. You have to tell him what room(s) should he go to. You can do it by heroku configuration variables.
+
+{% highlight bash %}
+# Campfire user's token. You can find it on user's profile pages.
+# You should probably have additional campfire user for a hubot 
+$ heroku config:add HUBOT_CAMPFIRE_TOKEN=secret
+# room ids coma-separated (you can find room id in room URL)
+$ heroku config:add HUBOT_CAMPFIRE_ROOMS=123 
+# your campfire account subdoamin
+$ heroku config:add HUBOT_CAMPFIRE_ACCOUNT="acme"
+{% endhighlight %}
+
+For some scripts [Redis][redis] is required. You can add a free [RedisToGo][redistogo] service by typing:
+
+{% highlight bash %}
+$ heroku addons:add redistogo:nano
+{% endhighlight %}
+
+All is set up. Now you can start hubot:
+
+{% highlight bash %}
+$ heroku ps:scale app=1 
+{% endhighlight %}
+
+#### It's alive!
+
+Now if you go to you campfire room and type
+
+{% highlight bash %}
+$ Hubot help 
+{% endhighlight %}
+
+you should get a list of commands that your Hubot is familiar with. 
+
+#### When it is not alive :/
+
+If hubot doesn't speak to you, it means that something went wrong. In that case you can check heroku logs by typing in console:
+
+{% highlight bash %}
+$ heroku logs 
+{% endhighlight %}
+
+You can also check application status by typing:
+
+{% highlight bash %}
+$ heroku ps 
+{% endhighlight %}
+
+
+#### More scripts
+You have just deployed a basic hubot set up. If you want to add more commands you can find them on the [hubot-scripts  repository][hubot-scripts]. It is already added to you your copy of hubot. To turn it on you should edit `hubot-scripts.json` file. It is simple JSON file with list of custom scripts that should be loaded. At the time of writing some of the scripts that are available in the hubot-scripts repository are not yet available on the npm. So if your hubot doesn't start after adding some custom scripts, check it's log files to see what scripts can't be found.
+
+#### Robot's name
+
+Hubot only talks to you if you call him by name. And it is a new of the user who's token hubot uses. You can specify that name in the `Procfile`
+
+{% highlight ruby %}
+app: bin/hubot --adapter campfire --name acmebot --enable-slash
+{% endhighlight %}
+
+And if you don't want to talk to hubot by name you can add `--enable-slash` option. It will allow to replace robot's name with `/`. Example:
+
+{% highlight bash %}
+/mustache me lady gaga 
+{% endhighlight %}
+
+[tutorial-1]: https://github.com/github/hubot/wiki/Hubot-on-Heroku
+[tutorial-2]: http://apocryph.org/2011/10/29/how-i-got-hubot-deployed-to-heroku/
+[tutorial-3]: http://jonmagic.com/blog/archives/2011/10/28/hipchat-hubot-and-me
+[hubot]: http://hubot.github.com/
+[hubot-repo]: https://github.com/github/hubot
+[hubot-scripts]: https://github.com/github/hubot-scripts
+[campfire]: http://campfirenow.com/
+[heroku]: http://www.heroku.com/
+[github]: https://github.com/
+[npm]: http://npmjs.org/
+[git]: http://git-scm.com/
+[ruby]: http://www.ruby-lang.org
+[nodejs]: http://nodejs.org/
+[homebrew]: http://mxcl.github.com/homebrew/
+[redis]: http://redis.io/
+[redistogo]: https://redistogo.com/
+[hubot-released]: https://github.com/blog/968-say-hello-to-hubot
