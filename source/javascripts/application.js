@@ -2,7 +2,7 @@
  * Created by martinciu on 21/11/14.
  */
 $(function() {
-    $("#projects").each(function() {
+    $("#xprojects").each(function() {
         var featured_projects = {
             "fuubar-cucumber": {rubygems: true},
             "thumbs": {rubygems: true},
